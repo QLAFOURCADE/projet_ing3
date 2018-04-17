@@ -5,6 +5,8 @@
  */
 package controleur;
 
+import vue.Menu;
+
 /**
  *
  * @author Quiterie
@@ -15,6 +17,7 @@ public class Projet_s6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        Menu m= new Menu();
         // TODO code application logic here
     }
     
