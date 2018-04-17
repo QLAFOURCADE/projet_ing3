@@ -47,7 +47,6 @@ public class TestHopital {
          * initialisation 
          */
         hop_cons = new Console();
-        Menu m= new Menu();
 
         /**
          * demande de rentrer les informations CONSOLE

@@ -44,32 +44,29 @@ public class Hopital {
         } catch (ClassNotFoundException e) {
             throw new ClassNotFoundException();
         }
-        
-        
     }
-    
     
     /**
      * METHODE : pour ajouter dans la BDD
      * @return 
      */
-   // public abstract boolean insert();
+   // public boolean insert();
     
     /**
      * METHODE : pour mettre à jour la BDD
      * @return 
      */
-   // public abstract boolean update();
+   // public boolean update();
     
     /**
      * METHODE : pour trier dans la BDD; rechercher des inofrmations
      * @return 
      */
-   // public abstract boolean select();
+   // public boolean select();
     
     /**
      * METHODE : pour supprimer dans la BDD
      * @return 
      */
-   // public abstract boolean delete();
+   // public boolean delete();
 }
