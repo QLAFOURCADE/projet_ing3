@@ -12,6 +12,10 @@ package modele;
 public class Docteur extends Employe{
     
     private String specialite;
+
+    public Docteur(int numero, String nom, String prenom, String adresse, String tel) {
+        super(numero, nom, prenom, adresse, tel);
+    }
     
     
 }

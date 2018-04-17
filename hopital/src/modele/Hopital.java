@@ -44,7 +44,10 @@ public class Hopital {
         } catch (ClassNotFoundException e) {
             throw new ClassNotFoundException();
         }
+        
+        
     }
+    
     
     /**
      * METHODE : pour ajouter dans la BDD

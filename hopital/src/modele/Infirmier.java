@@ -17,6 +17,10 @@ public class Infirmier extends Employe {
     private float salaire;
     private boolean rotation; // 0 - JOUR & 1 - NUIT
     private Service s_inf; // un infirmier est associé à un service
+
+    public Infirmier(int numero, String nom, String prenom, String adresse, String tel) {
+        super(numero, nom, prenom, adresse, tel);
+    }
     
     /**
      * CONSTRUCTEUR SURCHARGE
@@ -24,12 +28,12 @@ public class Infirmier extends Employe {
      * @param _rotation
      * @param _s_inf 
      */
-    public Infirmier(float _salaire, boolean _rotation, Service _s_inf)
+   /* public Infirmier(float _salaire, boolean _rotation, Service _s_inf)
     {
         this.salaire = _salaire;
         this.rotation = _rotation;
         this.s_inf = _s_inf;
-    }
+    }*/
 
     /**
      * METHODE : setter - lire l'attribut salaire
