@@ -18,6 +18,7 @@ public class Service {
     private String nom_service;
     private char batiment;
     private Docteur directeur; 
+    // liste de chambres qui sont associé à un service 
     
     
     

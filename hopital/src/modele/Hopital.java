@@ -5,6 +5,7 @@
  */
 package modele;
 
+import controleur.Connexion;
 import controleur.*;
 import vue.*;
 import java.sql.*;
@@ -14,15 +15,16 @@ import java.util.logging.Logger;
 /**
  *
  * @author Quiterie
+ * abstract
  */
 public class Hopital {
     
     /**
      * attributs de la classes
      * peut rajouter connexion ece à distance ????
-     * mettre peut etre toute les classes des tables ????
+     * protected : accés possible que pour les methodes dans classes + heritage
      */
-    private Connexion c_local;
+    protected Connexion c_local;
     
     /**
      * Constructeur de la classe
@@ -43,4 +45,28 @@ public class Hopital {
             throw new ClassNotFoundException();
         }
     }
+    
+    /**
+     * METHODE : pour ajouter dans la BDD
+     * @return 
+     */
+   // public abstract boolean insert();
+    
+    /**
+     * METHODE : pour mettre à jour la BDD
+     * @return 
+     */
+   // public abstract boolean update();
+    
+    /**
+     * METHODE : pour trier dans la BDD; rechercher des inofrmations
+     * @return 
+     */
+   // public abstract boolean select();
+    
+    /**
+     * METHODE : pour supprimer dans la BDD
+     * @return 
+     */
+   // public abstract boolean delete();
 }
