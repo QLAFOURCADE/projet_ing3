@@ -7,11 +7,15 @@ package modele;
 
 /**
  *
- * @author Quiterie
+ * @author Pierre-Louis
  */
 public class Docteur extends Employe{
     
     private String specialite;
+    private int numero;
+    
+    //Constructeur
+    public Docteur(){};
     
     /**
      * CONSTRUCTEUR SURCHARGE
@@ -22,9 +26,9 @@ public class Docteur extends Employe{
      * @param tel
      * @param specialite 
      */
-    public Docteur(int numero, String nom, String prenom, String adresse, String tel, String specialite)
+    public Docteur(int numero,  String specialite)
     {
-        super(numero, nom, prenom, adresse, tel);
+        this.numero = numero;
         this.specialite = specialite;
     }
 
@@ -44,7 +48,19 @@ public class Docteur extends Employe{
         this.specialite = specialite;
     }
     
-    
-    
-    
+     /**
+     * METHODE : lire l'attribut numero
+     * @return numero
+     */
+    public int getNumero() {
+        return numero;
+    }
+
+    /**
+     * METHODE : modifier l'attribut numero
+     * @param numero 
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
+    } 
 }

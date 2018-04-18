@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Quiterie
+ * @author Pierre-Louis
  */
 public class Chambre {
     
@@ -16,6 +16,9 @@ public class Chambre {
      */
     private int num_ch;
     private int nb_lits;
+    private int surveillant;
+    private String code_service;
+    
     
     //Constructeur 
     public Chambre(){};

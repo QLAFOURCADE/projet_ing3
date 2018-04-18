@@ -27,7 +27,7 @@ public class ChambreDAO extends DAO<Chambre> {
     return false;
   }
    
-  
+  //Trouver une chambre à partir de son ID
   public Chambre find(int num_ch) {
     Chambre chambre = new Chambre();      
       

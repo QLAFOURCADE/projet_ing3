@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controlleur;
-import modele.Chambre;
+package controleur;
+import modele.*;
 //import DAO.DAO;
 //import DAO.ChambreDAO;
 import DAO.*;
@@ -24,6 +24,14 @@ public class FirstTest {
       
     System.out.println("\n********************************\n");
       
+     //Testons des élèves
+    DAO<Docteur> docteurDao = new DocteurDAO(Connexion.getInstance());
+    for(int i = 88; i < 90; i++){
+      Docteur docteur = docteurDao.find(i);
+      System.out.println("Docteur N°" + docteur.getNumero() + "  - " + docteur.getSpecialite());
+    }
+      
+    System.out.println("\n********************************\n");
     
 }
 }

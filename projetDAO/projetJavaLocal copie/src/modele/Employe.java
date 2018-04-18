@@ -20,6 +20,9 @@ public class Employe {
     private String adresse;
     private String tel;
     
+    
+    public Employe(){};
+    
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param numero
