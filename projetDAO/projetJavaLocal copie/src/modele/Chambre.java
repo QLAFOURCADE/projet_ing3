@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis //fait
  */
 public class Chambre {
     
@@ -34,6 +34,16 @@ public class Chambre {
         this.num_ch = num_ch;
         this.nb_lits = nb_lits;
     }
+    
+    //Constructeur surchargé 4 param
+     public Chambre(String code_service, int num_ch, int surveillant, int nb_lits){
+        this.num_ch = num_ch;
+        this.nb_lits = nb_lits;
+        this.surveillant = surveillant;
+        this.code_service=code_service;
+           
+    }
+
 
     /**
      * METHODE : lire l'attribut numero de la chambre
@@ -65,6 +75,30 @@ public class Chambre {
      */
     public void setNb_lits(int nb_lits) {
         this.nb_lits = nb_lits;
+    }
+    
+    //Get service
+    public String getCodeService()
+    {
+        return code_service;
+    }
+    
+    //Set service
+    public void setCodeService(String codeService)
+    {
+        this.code_service=codeService;
+    }
+    
+    //Get surveillnt
+    public int getIdSurveillant()
+    {
+        return surveillant;
+    }
+    
+    //Set surveillant
+    public void setIdSurveillant(int idSurveillant)
+    {
+        this.surveillant=idSurveillant;
     }
     
     

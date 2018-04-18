@@ -7,16 +7,22 @@ package modele;
 
 /**
  *
- * @author Quiterie
+ * @author Pierre-Louis //fait
  */
 public class Infirmier extends Employe {
     
     /**
      * les attributs
      */ 
-    private float salaire;
+    private int numero;
+    private int salaire;
     private boolean rotation; // 0 - JOUR & 1 - NUIT
-    private Service s_inf; // un infirmier est associé à un service
+    private String code_service; 
+    
+    
+    
+    //Constructeur
+    public Infirmier(){};
     
     /**
      * CONSTRUCTEUR SURCHARGE
@@ -29,19 +35,30 @@ public class Infirmier extends Employe {
      * @param _rotation
      * @param _s_inf 
      */
-    public Infirmier(int numero, String nom, String prenom, String adresse, String tel, float _salaire, boolean _rotation, Service _s_inf)
+    public Infirmier(int numero, int salaire, boolean rotation, String code_service)
     {
-        super(numero, nom, prenom, adresse, tel);
-        this.salaire = _salaire;
-        this.rotation = _rotation;
-        this.s_inf = _s_inf;
+        this.numero = numero;
+        this.salaire = salaire;
+        this.rotation = rotation;
+        this.code_service = code_service;
     }
 
+    
+    /**
+     * METHODE : getter - lire l'attribut numero
+     * @return numero
+     */
+    public int getNumero()
+    {
+        return numero;
+    }
+    
+    
     /**
      * METHODE : getter - lire l'attribut salaire
      * @return salaire
      */
-    public float getSalaire()
+    public int getSalaire()
     {
         return salaire;
     }
@@ -54,19 +71,30 @@ public class Infirmier extends Employe {
     public boolean getRotation() {
         return rotation;
     }
-
+    
     /**
-     * METHODE : getter - lire l'attribut service
-     * @return service
+     * METHODE : getter - lire l'attribut code_service
+     * @return code_service
      */
-    /////////////////////////////////// A FAIRE !!!!!!!!!!!! ///////////////////////////////
-
-
+    public String getCodeService()
+    {
+        return code_service;
+    }
+   
+    
+     /**
+     * METHODE : setter - modifier l'attribut numero
+     * @param numero 
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
     /**
      * METHODE : setter - modifier l'attribut salaire
      * @param salaire 
      */
-    public void setSalaire(float salaire) {
+    public void setSalaire(int salaire) {
         this.salaire = salaire;
     }
 
@@ -79,10 +107,12 @@ public class Infirmier extends Employe {
     }
 
     /**
-     * METHODE : setter - modifier l'attribut service
-     * @param s_inf 
+     * METHODE : setter - modifier l'attribut code_service
+     * @param code_service 
      */
-    ////////////////////////////////////// A FAIRE !!!!!!!!!!!! ///////////////////////////////
+    public void setRotation(String code_service) {
+        this.code_service = code_service;
+    }
 
             
 }

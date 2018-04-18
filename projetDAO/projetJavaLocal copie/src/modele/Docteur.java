@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis //fait
  */
 public class Docteur extends Employe{
     
