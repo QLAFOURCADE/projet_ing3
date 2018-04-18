@@ -14,6 +14,27 @@ public class Docteur extends Employe{
     private String specialite;
     
     /**
+     * CONSTRUCTEUR PAR DEFAUT 
+     */
+    public Docteur()
+    {
+        super();
+        specialite = "";
+    }
+    
+    /**
+     * CONSTRUCTEUR : par defaut pour la partie mere sauf le numéro du docteur
+     * + specialite connu : car les deux éléments données par BDD dans table Docteur 
+     * @param specialite 
+     * @param numero
+     */
+    public Docteur(int numero, String specialite)
+    {
+        super();
+        this.numero = numero;
+        this.specialite = specialite;
+    }
+    /**
      * CONSTRUCTEUR SURCHARGE
      * @param numero
      * @param nom

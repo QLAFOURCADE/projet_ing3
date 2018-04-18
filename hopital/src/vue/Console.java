@@ -20,7 +20,7 @@ public class Console {
      * attributs de la classe
      */
     Scanner clavier = new Scanner(System.in);
-
+    
     /**
      * Pour créer une variable avec les éléments tapers au clavier 
      * @return h
@@ -43,11 +43,11 @@ public class Console {
         System.out.println("1 Chambre");
         System.out.println("2 Docteur");
         System.out.println("3 Employe");
-        System.out.println("4 Hospitalisation");
+        ///////////System.out.println("4 Hospitalisation");
         System.out.println("5 Infirmier");
         System.out.println("6 Malade");
         System.out.println("7 Service");
-        System.out.println("8 Soigne");
+        ////////////System.out.println("8 Soigne");
         System.out.println("0 Quitter");
 
         Scanner c = new Scanner(System.in);

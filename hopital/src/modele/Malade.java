@@ -21,6 +21,37 @@ public class Malade {
     private String tel;
     private String mutuelle; 
 
+    /**
+     *  CONSTRUCTEUR PAR DEFAUT 
+     */
+    public Malade()
+    {
+        numero = 0;
+        nom = "";
+        prenom = "";
+        adresse = "";
+        tel = "";
+        mutuelle = "";
+    }
+    
+    /**
+     * CONSTRUCTEUR SURCHARGE
+     * @param numero
+     * @param nom
+     * @param prenom
+     * @param adresse
+     * @param tel
+     * @param mutuelle 
+     */
+    public Malade(int numero, String nom, String prenom, String adresse, String tel, String mutuelle)
+    {
+        this.numero = numero;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.adresse = adresse;
+        this.tel = tel;
+        this.mutuelle = mutuelle;
+    }
     
     /**
      * METHODES : getter - lire l'attribut numero
@@ -117,8 +148,14 @@ public class Malade {
     public void setMutuelle(String mutuelle) {
         this.mutuelle = mutuelle;
     }
-    
-    
-    
+
+    /**
+     * METHODE : afficher élément d'un malade 
+     * @return string
+     */
+    @Override
+    public String toString() {
+        return "Malade{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + ", mutuelle=" + mutuelle + '}';
+    }
     
 }

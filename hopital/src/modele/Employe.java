@@ -13,13 +13,26 @@ public class Employe {
     
     /**
      * les attributs
+     * le numero est mis en protected pour que les classes filles puissent l'utiliser 
+     *      utile pour faire le lien et remplir les arraylist comme la BDD
      */
-    private int numero;
+    protected int numero;
     private String nom;
     private String prenom;
     private String adresse;
     private String tel;
     
+    /**
+     * CONSTRUCTEUR PAR DEFAUT
+     */
+    public Employe()
+    {
+        numero = 0;
+        nom = "";
+        prenom = "";
+        adresse = "";
+        tel = "";
+    }
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param numero

@@ -47,13 +47,12 @@ public class TestHopital {
          * initialisation 
          */
         hop_cons = new Console();
-        Menu m= new Menu();
 
         /**
          * demande de rentrer les informations CONSOLE
          * recuperer les données tapées au clavier 
          */
-        
+        /**
         System.out.println("Nom de la base :");
         String nom_base = hop_cons.toString();
         
@@ -66,9 +65,19 @@ public class TestHopital {
         /**
          * creation de la connexion après verifiation
          */
+        
         TestHopital test_h;
-        test_h = new TestHopital(nom_base, login, pass);
-        //test_h = new TestHopital("hopital", "root", "");
+        //test_h = new TestHopital(nom_base, login, pass);
+        test_h = new TestHopital("hopital", "root", "");
+        
+        /**
+         * remplissage des arraylists présente dans la classe hopital
+         */
+        // remplir et afficher la liste de malade
+        //hopital.remplir_malade();
+        hopital.remplir_chambre();
+        
+        //hopital.affichage_uneliste(hop_cons.menu());
     }
     
 }

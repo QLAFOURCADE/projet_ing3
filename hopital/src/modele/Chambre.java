@@ -16,16 +16,32 @@ public class Chambre {
      */
     private int num_ch;
     private int nb_lits;
+    private Infirmier surveillant;
+    private String code;
     
     /**
-     * CONSTRUCTEUR SURCHARGER
+     * CONSTRUCTEUR PAR DEFAUT
+     */
+    public Chambre()
+    {
+        num_ch = 0;
+        nb_lits = 0;
+        surveillant = new Infirmier();
+        code = "";
+    }
+    
+    /**
+     * CONSTRUCTEUR SURCHARGE
      * @param num_ch
      * @param nb_lits 
      */
-    public Chambre(int num_ch, int nb_lits)
+    public Chambre(int num_ch, int nb_lits, int inf, String code)
     {
         this.num_ch = num_ch;
         this.nb_lits = nb_lits;
+        surveillant = new Infirmier();
+        this.surveillant.numero = inf;
+        this.code = code;
     }
 
     /**
