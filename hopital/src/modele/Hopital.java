@@ -51,6 +51,7 @@ public class Hopital {
         }
         
     }
+    
     //////////////////////////// MALADE ////////////////////////////////////////////
     /**
      * METHODE : pour remplir la liste de malade present dans hopital
@@ -89,7 +90,11 @@ public class Hopital {
     }
     
     /////////////////////////// CHAMBRE //////////////////////////////////////////////
-        public void remplir_chambre() throws SQLException
+    /**
+     * METHODE : pour remplir la liste des chambres
+     * @throws SQLException 
+     */   
+    public void remplir_chambre() throws SQLException
     {
         //System.out.println("dans remplir");
         String table = "chambre";
@@ -109,15 +114,31 @@ public class Hopital {
             int t3 = Integer.parseInt(t_b);
             // constructeur chambre : int num_ch, int nb_lits, int inf, String code
             Chambre c_tamp = new Chambre(t1,t3,t2,t[0]);
-            /////System.out.println("chambre crée");
-            // ajouter la chambre créer dans la liste contenant tous les malades
-            /////System.out.println("j'ajoute un malade"+list);
-         // this.m.add(m_tamp);
+            
+            // ajouter la chambre créer dans la liste
+            this.c.add(c_tamp);
+        }
+        for(Chambre ch : this.c)
+        {
+            for(Infirmier list2 : this.inf)
+            {
+                if(ch.surveillant.getNumero() == list2.getNumero())
+                {
+                    ch.surveillant.setNom(list2.getNom());
+                    ch.surveillant.setPrenom(list2.getPrenom());
+                    ch.surveillant.setAdresse(list2.getAdresse());
+                    ch.surveillant.setTel(list2.getTel());
+                    ch.surveillant.setRotation(list2.getRotation());
+                    ch.surveillant.setSalaire(list2.getSalaire());
+                    ch.surveillant.s_inf = list2.s_inf;
+                }
+            }
         }
     }
+    
     /////////////////////////// SERVICE ///////////////////////////////////////////////
     /**
-     * METHODE : pour remplir la liste de service 
+     * METHODE : pour remplir la liste des service 
      * @throws SQLException 
      */
     public void remplir_service() throws SQLException
@@ -132,28 +153,176 @@ public class Hopital {
             // diviser en fonction des attributs
             String t[] = new String[4];
             t = list.split(",");
-            /**
-            for(int i=0; i<4; i++)
-            {
-                System.out.println("element "+i+" = "+ t[i]);
-            }
-            */
             // problème d'espace dans la chaine de caractère : on doit enlever pour convertir en int
             String t_b = t[3].trim();
             // convertir en int le code du service
             int t3 = Integer.parseInt(t_b);
             // convertir le string en char pour le batiment
             char t2 = t[2].charAt(0);
+            // compléter la liste des chambres présente dans la classe service : 
+                ///// le but avoir la liste des chambres que pour le service en question 
             // constructeur service : String code, String nom_service, char batiment, int num_directeur
             Service s_tamp = new Service(t[0], t[1], t2, t3);
-            /////System.out.println("service crée");
-            // ajouter le malade créer dans la liste contenant tous les malades
-            /////System.out.println("j'ajoute un service"+list);
+            // ajoute le service avec toutes les données dans la liste de l'hopital
             this.s.add(s_tamp);
+        }
+        // modifier les chambres appartenant aux services créer 
+        for(Service list : this.s)
+        {
+            for(Chambre ch : this.c)
+            {
+                String s1 = new String(ch.getCode());
+                String s2 = new String(list.getCode());
+                int comp = s1.compareTo(s2);
+                if(comp == 0)
+                {
+                    /// le code de la chambre est le meme que le service :
+                        // la chambre appartient à ce service on l'ajoute dans l'arraylist
+                    list.liste_ch.add(ch);
+                }
+            }
+            for(Docteur d_list : this.doc)
+            {
+                if(list.directeur.numero == d_list.getNumero())
+                {
+                    list.directeur.setNom(d_list.getNom());
+                    list.directeur.setPrenom(d_list.getPrenom());
+                    list.directeur.setAdresse(d_list.getAdresse());
+                    list.directeur.setTel(d_list.getTel());
+                    list.directeur.setSpecialite(d_list.getSpecialite());
+                }
+            }
         }
     }
     
+    ////////////////////////// EMPLOYE ///////////////////////////////////////////////
+    /**
+     * METHODE : pour remplir la liste des employés
+     * @throws SQLException 
+     */
+    public void remplir_employe() throws SQLException
+    {
+        String table = "employe";
+        ArrayList<String> bdd = c_local.remplirChampsRequete("Select* from "+table);
+        //System.out.println("recupere table BDD ");
+        for(String list : bdd)
+        {
+            // recuperer ligne après ligne le contenu de l'arraylist : list correspond à une ligne 
+            // diviser en fonction des attributs
+            String t[] = new String[6];
+            t = list.split(",");      
+            // convertir en int le numero de l'employe
+            int t0 = Integer.parseInt(t[0]);
+            // problème car adresse composé d'une virgule
+            String t3 = t[3]+ ","+ t[4];
+            // constructeur employe : int numero, String nom, String prenom, String adresse, String tel
+            Employe e_tamp = new Employe(t0, t[1], t[2], t3, t[5]);
+            
+            // ajouter l'employe créer dans la liste
+            this.emp.add(e_tamp);
+        }
+    }
 
+    ////////////////////////// DOCTEUR ////////////////////////////////////////////////
+    /**
+     * METHODE : pour remplir la liste des docteurs, qui sont aussi des employés
+     * @throws SQLException 
+     */
+    public void remplir_docteur() throws SQLException
+    {
+        String table = "docteur";
+        ArrayList<String> bdd = c_local.remplirChampsRequete("Select* from "+table);
+        //System.out.println("recupere table BDD ");
+        for(String list : bdd)
+        {
+            // recuperer ligne après ligne le contenu de l'arraylist : list correspond à une ligne 
+            // diviser en fonction des attributs
+            String t[] = new String[2];
+            t = list.split(",");      
+            // convertir en int le numero du docteur 
+            int t0 = Integer.parseInt(t[0]);
+            // constructeur docteur : int numero, String specialite
+            Docteur d_tamp = new Docteur(t0, t[1]);
+            
+            // ajouter l'employe créer dans la liste
+            this.doc.add(d_tamp);
+        }
+        
+        // associer les éléments de la table employé celle du docteur
+        for(Docteur list : this.doc)
+        {
+            for(Employe list2 : this.emp)
+            {
+                if(list.getNumero() == list2.getNumero())
+                {
+                    list.setNom(list2.getNom());
+                    list.setPrenom(list2.getPrenom());
+                    list.setAdresse(list2.getAdresse());
+                    list.setTel(list2.getTel());
+                }
+                 
+            }
+        }
+    }
+    
+    ///////////////////////// INFIRMIER /////////////////////////////////////////////
+    /**
+     * METHODE : pour remplir la liste des infirmiers qui sont aussi des employes
+     *              et qui sont associé à un service 
+     * @throws SQLException 
+     */
+    public void remplir_infirmier() throws SQLException
+    {
+         String table = "infirmier";
+        ArrayList<String> bdd = c_local.remplirChampsRequete("Select* from "+table);
+        //System.out.println("recupere table BDD ");
+        for(String list : bdd)
+        {
+            // recuperer ligne après ligne le contenu de l'arraylist : list correspond à une ligne 
+            // diviser en fonction des attributs
+            String t[] = new String[4];
+            t = list.split(",");      
+            // convertir en int le numero de l'infirmier
+            int t0 = Integer.parseInt(t[0]);
+            float t3 = Float.parseFloat(t[3]);
+            // constructeur infirmier : int numero, float salaire, String rotation, String code
+            Infirmier i_tamp = new Infirmier(t0,t3,t[2],t[1]);
+            
+            // ajouter l'employe créer dans la liste
+            this.inf.add(i_tamp);
+        }
+        
+        // associer les éléments de la table employé à celle des infirmiers
+        for(Infirmier list : this.inf)
+        {
+            for(Employe list2 : this.emp)
+            {
+                if(list.getNumero() == list2.getNumero())
+                {
+                    list.setNom(list2.getNom());
+                    list.setPrenom(list2.getPrenom());
+                    list.setAdresse(list2.getAdresse());
+                    list.setTel(list2.getTel());
+                }
+            }
+            // compléter les éléments du service associé à chaque infirmier 
+            for(Service list3 : this.s)
+            {
+                String s1 = new String(list.s_inf.getCode());
+                String s2 = new String(list3.getCode());
+                int comp = s1.compareTo(s2);
+                if(comp == 0)
+                {
+                    list.s_inf.setNom_service(list3.getNom_service());
+                    list.s_inf.setBatiment(list3.getBatiment());
+                    list.s_inf.setDirecteur(list3.getDirecteur());
+                    list.s_inf.liste_ch = list3.liste_ch;
+                }
+            }
+        }
+        
+    }
+    
     
     /**
      * METHODE : affichage arraylist selon le choix de l'utilisateur
@@ -165,6 +334,7 @@ public class Hopital {
         {
             // System.out.println("0 Quitter");
             case '0':
+                System.out.println(" A BIENTOT !");
                 System.exit(0);
                 break;
             //System.out.println("1 Chambre");
@@ -212,6 +382,7 @@ public class Hopital {
                 for(Service T : this.s)
                 {
                     System.out.println(T.toString());
+                    System.out.println(T.toString2());
                 }
                 break;
             //System.out.println("8 Soigne");
@@ -223,25 +394,7 @@ public class Hopital {
         }
     }
     
-/*** docteur methode  
-        table = "docteur";
-        bdd = c_local.remplirChampsTable(table);
-        Docteur d_tamp;
-        for(int j=1; j<bdd.size(); j++)
-        {
-            int t0;
-            // recuperer ligne après ligne le contenu de l'arraylist
-            tampon = bdd.get(j);
-            // diviser en fonction des attributs
-            String t[] = new String[2];
-            t = tampon.split(",");
-            // convertir en int le numero du docteur
-            t0 = Integer.parseInt(t[0]);
-            // constructeur docteur : int numero, String specialite 
-            d_tamp = new Docteur(t0, t[1]);            
-            // ajouter le docteur créer dans la liste contenant tous les docteurs
-            this.doc.add(d_tamp);
-        }
+
         
         /**
          *      Arraylist Infirmier
@@ -269,39 +422,6 @@ public class Hopital {
     }
  */
 
-    /**
-     * METHODE :
-     * @throws SQLException 
-     */
-    public void identification_emp() throws SQLException
-    {
-        // arraylist pour avoir tous les employé et identifier qui est docteur et/ou infirmier
-        // recupere la table entiere de employé
-        ArrayList<String> e_tamp = c_local.remplirChampsTable("employe");
-        String tampon;
-        // décomposer les éléments de la BDD
-        for(int i=0; i<e_tamp.size(); i++)
-        {
-            // recuperer ligne par ligne le contenu de la liste
-            tampon = e_tamp.get(i);
-            // diviser chaque ligne en 5 éléments : numero, nom, prenom, adresse, tel
-            String t[] = new String[5];
-            t = tampon.split(",");
-            // variable prends premier élément : le numero de l'employé à comparer
-            int t0 = Integer.parseInt(t[0]);
-            // boucle for pour parcourir la liste doc; comparer avec employe; mettre ceux avec numero different dans infirmier
-            for(int j=0; j<doc.size(); j++)
-            {
-                if (t0 != doc.get(j).getNumero())
-                {
-                    // l'employé est un infirmier ! + il faut ajouter les éléments dans l'arraylist infirmier
-                    // constructeur infirmier : int numero, String nom, String prenom, String adresse, String tel, float _salaire, boolean _rotation, Service _s_inf
-                   // Infirmier i_t = new Infirmier(t0,t[1],t[2],t[3],t[4],t[5]);
-                }
-            }
-            
-        }
-    }
     
     /**
      * METHODE : pour ajouter dans la BDD

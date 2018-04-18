@@ -17,10 +17,10 @@ public class Employe {
      *      utile pour faire le lien et remplir les arraylist comme la BDD
      */
     protected int numero;
-    private String nom;
-    private String prenom;
-    private String adresse;
-    private String tel;
+    protected String nom;
+    protected String prenom;
+    protected String adresse;
+    protected String tel;
     
     /**
      * CONSTRUCTEUR PAR DEFAUT
@@ -130,5 +130,13 @@ public class Employe {
         this.tel = tel;
     }
 
+    /**
+     * METHODE : afficher les renseignements de l'employé
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Employe{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + '}';
+    }
     
 }

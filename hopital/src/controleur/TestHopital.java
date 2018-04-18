@@ -34,6 +34,21 @@ public class TestHopital {
         hopital = new Hopital(nameDatabase, loginDatabase, passwordDatabase);
     }
 
+    public void remplirClasses() throws SQLException
+    {
+        /**
+         * remplissage des arraylists présente dans la classe hopital
+         */
+        // remplir et afficher la liste de malade
+        hopital.remplir_malade();
+        hopital.remplir_employe();
+        hopital.remplir_docteur();
+        // obliger de faire deux fois service pour avoir toutes les attributs des objets remplis
+        //hopital.remplir_service();
+        hopital.remplir_infirmier();
+        hopital.remplir_chambre();
+        hopital.remplir_service();
+    }
     
     /**
      * @param args the command line arguments
@@ -70,14 +85,8 @@ public class TestHopital {
         //test_h = new TestHopital(nom_base, login, pass);
         test_h = new TestHopital("hopital", "root", "");
         
-        /**
-         * remplissage des arraylists présente dans la classe hopital
-         */
-        // remplir et afficher la liste de malade
-        //hopital.remplir_malade();
-        hopital.remplir_chambre();
-        
-        //hopital.affichage_uneliste(hop_cons.menu());
+        test_h.remplirClasses();
+        hopital.affichage_uneliste(hop_cons.menu());
     }
     
 }
