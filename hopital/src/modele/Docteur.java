@@ -64,6 +64,16 @@ public class Docteur extends Employe{
     public void setSpecialite(String specialite) {
         this.specialite = specialite;
     }
+
+    /**
+     * METHODE : pour afficher les attributs d'un ou des docteurs
+     * @return 
+     */
+    @Override
+    public String toString() {
+        String s = " numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + "; adresse=" + adresse + "; tel=" + tel;
+        return "Docteur{" + s + " specialite=" + specialite + '}';
+    }
     
     
     

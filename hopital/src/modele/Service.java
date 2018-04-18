@@ -19,8 +19,8 @@ public class Service {
     private String code;
     private String nom_service;
     private char batiment;
-    private Docteur directeur; 
-    private ArrayList<Chambre> liste_ch;// liste de chambres qui sont associé à un service 
+    protected Docteur directeur; // chaque service posséde un directeur qui corresponds lui même à un docteur
+    protected ArrayList<Chambre> liste_ch = new ArrayList<>(); // liste de chambres qui sont associé à un service 
     
     /**
      * CONSTRUCTEUR PAR DEFAUT
@@ -49,18 +49,22 @@ public class Service {
         this.directeur = new Docteur();
         this.directeur.setNumero(num_directeur);
     }
+    
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param code
      * @param nom_service
-     * @param batiment 
+     * @param batiment
+     * @param num_directeur
+     * @param bdd_chambre 
      */
-    public Service(String code, String nom_service, char batiment, Chambre bdd_chambre)
+    public Service(String code, String nom_service, char batiment, int num_directeur, Chambre bdd_chambre)
     {
         this.code = code;
         this.nom_service = nom_service;
         this.batiment = batiment;
         this.directeur = new Docteur();
+        this.directeur.numero = num_directeur;
         this.liste_ch.add(bdd_chambre);
     }
 
@@ -89,7 +93,15 @@ public class Service {
     }
 
     /**
-     * METHODES : getter - lire l'attribut directeur (un docteur) + la liste des chambre pour le service
+     * METHODE : getter - lire le docteur associé au service
+     * @return 
+     */
+    public Docteur getDirecteur() {    
+        return directeur;
+    }
+
+    /**
+     * METHODES : getter - lire l'attribut liste des chambre pour le service
      */
     ///////////////////////////////////////// A faire !!!!!!!!!!!!! /////////////////////////////////////////
     
@@ -117,15 +129,42 @@ public class Service {
         this.batiment = batiment;
     }
 
-    @Override
-    public String toString() {
-        return "Service{" + "code=" + code + ", nom_service=" + nom_service + ", batiment=" + batiment + ", num directeur=" + directeur.getNumero() + '}';
+    /**
+     * METHODE : setter - modifier le docteur du service
+     * @param directeur 
+     */
+    public void setDirecteur(Docteur directeur) {
+        this.directeur = directeur;
     }
 
+    
     /**
-     * METHODES : setter - modifier l'attribut directeur + la liste des chambres associer au service
+     * METHODES : setter - modifier la liste des chambres associer au service
      */
     ////////////////////////////////////// A FAIRE !!!!!!!!!!!!!!!!!!!!!!! ///////////////////////////////
     
     
+    /**
+     * METHODE : affichage de toute la table de Service 
+     * @return s
+     */
+    @Override
+    public String toString() {
+        String s = "\n" + "         " +this.directeur.toString();
+        return "Service{" + "code=" + code + ", nom_service=" + nom_service + ", batiment=" + batiment + ", ASSOCIE AU DIRECTEUR : "  + s+'}';
+    }
+
+    /**
+     * suite de l'affichage des renseignements 
+     * @return
+     */
+    public String toString2()
+    {
+        String s_b = "";
+        for(Chambre e : liste_ch)
+        {
+            s_b = s_b + "\n" + "       " + e.toString();  
+        }
+        return s_b;
+    }
 }

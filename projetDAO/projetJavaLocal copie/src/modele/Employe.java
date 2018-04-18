@@ -13,26 +13,16 @@ public class Employe {
     
     /**
      * les attributs
-     * le numero est mis en protected pour que les classes filles puissent l'utiliser 
-     *      utile pour faire le lien et remplir les arraylist comme la BDD
      */
-    protected int numero;
-    protected String nom; // nom de l'employe
-    protected String prenom; // prenom 
-    protected String adresse; // adresse postale
-    protected String tel; // telephone
+    private int numero;
+    private String nom;
+    private String prenom;
+    private String adresse;
+    private String tel;
     
-    /**
-     * CONSTRUCTEUR PAR DEFAUT
-     */
-    public Employe()
-    {
-        numero = 0;
-        nom = "";
-        prenom = "";
-        adresse = "";
-        tel = "";
-    }
+    
+    public Employe(){};
+    
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param numero
@@ -130,13 +120,5 @@ public class Employe {
         this.tel = tel;
     }
 
-    /**
-     * METHODE : afficher les renseignements de l'employé
-     * @return 
-     */
-    @Override
-    public String toString() {
-        return "Employe{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + '}';
-    }
     
 }

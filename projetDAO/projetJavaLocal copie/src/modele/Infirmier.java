@@ -15,39 +15,8 @@ public class Infirmier extends Employe {
      * les attributs
      */ 
     private float salaire;
-    private String rotation; // JOUR & NUIT
-    protected Service s_inf; // un infirmier est associé à un service
-    
-    /**
-     * CONSTRUCTEUR PAR DEFAUT
-     */
-    public  Infirmier()
-    {
-        super();
-        salaire = 0;
-        rotation = "";
-        s_inf = new Service();
-    }
-    
-    /**
-     * CONSTRUCTEUR
-     * @param numero
-     * @param salaire
-     * @param rotation
-     * @param code 
-     */
-    public Infirmier(int numero, float salaire, String rotation, String code)
-    {
-        super();
-        this.numero = numero;
-        this.salaire = salaire;
-        // identifier jour ou nuit la rotation de l'infirmier
-        this.rotation = rotation;
-        // modifier le code 
-        this.s_inf = new Service();
-        s_inf.setCode(code);
-        
-    }
+    private boolean rotation; // 0 - JOUR & 1 - NUIT
+    private Service s_inf; // un infirmier est associé à un service
     
     /**
      * CONSTRUCTEUR SURCHARGE
@@ -58,14 +27,14 @@ public class Infirmier extends Employe {
      * @param tel
      * @param _salaire
      * @param _rotation
-     * @param code
+     * @param _s_inf 
      */
-    public Infirmier(int numero, String nom, String prenom, String adresse, String tel, float _salaire, String _rotation, String code)
+    public Infirmier(int numero, String nom, String prenom, String adresse, String tel, float _salaire, boolean _rotation, Service _s_inf)
     {
         super(numero, nom, prenom, adresse, tel);
         this.salaire = _salaire;
         this.rotation = _rotation;
-        this.s_inf = new Service();
+        this.s_inf = _s_inf;
     }
 
     /**
@@ -79,9 +48,10 @@ public class Infirmier extends Employe {
     
     /**
      * METHODE : getter - lire l'attribut rotation
+     * 0 = JOUR & 1 = NUIT
      * @return rotation
      */
-    public String getRotation() {
+    public boolean getRotation() {
         return rotation;
     }
 
@@ -104,20 +74,9 @@ public class Infirmier extends Employe {
      * METHODE : setter - modifier l'attribut rotation
      * @param rotation 
      */
-    public void setRotation(String rotation) {
+    public void setRotation(boolean rotation) {
         this.rotation = rotation;
     }
-
-    /**
-     * METHODE : pour afficher les attributs d'un ou des infimiers
-     * @return 
-     */
-    @Override
-    public String toString() {
-        String s = "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel;
-        return "Infirmier{" +s+ ", salaire=" + salaire + ", rotation=" + rotation + ", ASSOCIE AU SERVICE :" + s_inf.getCode() + '}';
-    }
-
 
     /**
      * METHODE : setter - modifier l'attribut service
@@ -125,6 +84,5 @@ public class Infirmier extends Employe {
      */
     ////////////////////////////////////// A FAIRE !!!!!!!!!!!! ///////////////////////////////
 
-    
             
 }

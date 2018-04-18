@@ -16,7 +16,8 @@ public class Chambre {
      */
     private int num_ch;
     private int nb_lits;
-    private Infirmier surveillant;
+    // une chambre posséde un surveillant qui est lui meme un infirmier
+    protected Infirmier surveillant;
     private String code;
     
     /**
@@ -29,11 +30,13 @@ public class Chambre {
         surveillant = new Infirmier();
         code = "";
     }
-    
+
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param num_ch
-     * @param nb_lits 
+     * @param nb_lits
+     * @param inf
+     * @param code
      */
     public Chambre(int num_ch, int nb_lits, int inf, String code)
     {
@@ -61,6 +64,14 @@ public class Chambre {
     }
 
     /**
+     * METHODE : lire l'attribut code 
+     * @return 
+     */
+    public String getCode() {
+        return code;
+    }
+    
+    /**
      * METHODE : modifier l'attribut numero de la chambre
      * @param num_ch 
      */
@@ -75,6 +86,21 @@ public class Chambre {
     public void setNb_lits(int nb_lits) {
         this.nb_lits = nb_lits;
     }
+
+    /**
+     * METHODE : modifier l'attribut code 
+     * @param code 
+     */
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     
+    @Override
+    public String toString() {
+        String s = "\n";
+        s = s + "       " + surveillant.toString();
+        return "Chambre{" + "num_ch=" + num_ch + ", nb_lits=" + nb_lits + ", service associé=" + code + ", surveillant associé=" + s + '}';
+    }
     
 }
