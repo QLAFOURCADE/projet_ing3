@@ -59,6 +59,10 @@ public class Menu extends JFrame implements ActionListener {
     // POUR AJOUT MALADE
      private ArrayList<JTextField>jmalade;
      private ArrayList<JLabel> lmalade;
+     private JButton b;
+    // FENETRES POUR DEMANDER LA SAISIE DE LUTILISATEUR
+    JFrame f= new JFrame(); // Pour Recherche 
+    JFrame f1= new JFrame(); // Pour Supprimer
 
     
     
@@ -99,6 +103,7 @@ public class Menu extends JFrame implements ActionListener {
         list_bouton_docteur.add(new JButton("tel"));
         list_bouton_docteur.add(new JButton("specialite"));
         list_bouton_docteur.add(new JButton ("Recherche") );
+        list_bouton_docteur.add(new JButton ("Supprimer") );
         
         // instancier les boutons employee
         list_bouton_employee= new ArrayList<>();
@@ -108,6 +113,7 @@ public class Menu extends JFrame implements ActionListener {
         list_bouton_employee.add(new JButton("adresse"));
         list_bouton_employee.add(new JButton("tel"));
         list_bouton_employee.add(new JButton ("Recherche") );
+        list_bouton_employee.add(new JButton ("Supprimer") );
         
         // instancier les boutons malade
         list_bouton_malade= new ArrayList<>();
@@ -118,6 +124,7 @@ public class Menu extends JFrame implements ActionListener {
         list_bouton_malade.add(new JButton("tel"));
         list_bouton_malade.add(new JButton("mutuelle"));
         list_bouton_malade.add(new JButton ("Recherche") );
+        list_bouton_malade.add(new JButton ("Supprimer") );
         
         // instancier les boutons infirmier
         list_bouton_infirmier= new ArrayList<>();
@@ -125,12 +132,14 @@ public class Menu extends JFrame implements ActionListener {
         list_bouton_infirmier.add(new JButton("rotation"));
         list_bouton_infirmier.add(new JButton("service"));
         list_bouton_infirmier.add(new JButton ("Recherche") );
+        list_bouton_infirmier.add(new JButton ("Supprimer") );
         
         // instancier les boutons chambre
        list_bouton_chambre= new ArrayList<>();
        list_bouton_chambre.add(new JButton("numero de chambre"));
        list_bouton_chambre.add(new JButton("nombre de lits"));
        list_bouton_chambre.add(new JButton ("Recherche") );
+       list_bouton_chambre.add(new JButton ("Supprimer") );
         
         
         
@@ -174,6 +183,7 @@ public class Menu extends JFrame implements ActionListener {
             list_Panel.get(0).add(list_bouton_docteur.get(4));
             list_Panel.get(0).add(list_bouton_docteur.get(5));
             list_Panel.get(0).add(list_bouton_docteur.get(6));
+            list_Panel.get(0).add(list_bouton_docteur.get(7));
             // Ajout des fonctions Recherche et trier dans les boutons
 
         }
@@ -206,6 +216,7 @@ public class Menu extends JFrame implements ActionListener {
             list_Panel.get(2).add(list_bouton_malade.get(4));
             list_Panel.get(2).add(list_bouton_malade.get(5));
             list_Panel.get(2).add(list_bouton_malade.get(6));
+            list_Panel.get(1).add(list_bouton_malade.get(7));
             // Ajout des fonctions Recherche et trier dans les boutons
 
         }
@@ -218,6 +229,7 @@ public class Menu extends JFrame implements ActionListener {
             list_Panel.get(3).add(list_bouton_infirmier.get(1));
             list_Panel.get(3).add(list_bouton_infirmier.get(2));
             list_Panel.get(3).add(list_bouton_infirmier.get(3));
+            list_Panel.get(3).add(list_bouton_infirmier.get(4));
            
             
             // Ajout des fonctions Recherche et trier dans les boutons
@@ -232,6 +244,7 @@ public class Menu extends JFrame implements ActionListener {
             list_Panel.get(4).add(list_bouton_chambre.get(0));
             list_Panel.get(4).add(list_bouton_chambre.get(1));
             list_Panel.get(4).add(list_bouton_chambre.get(2));
+            list_Panel.get(4).add(list_bouton_chambre.get(3));
            
             
             // Ajout des fonctions Recherche et trier dans les boutons
@@ -250,13 +263,14 @@ public class Menu extends JFrame implements ActionListener {
         gestion = new JPanel(new GridLayout(0, 1));
         Ajout= new JButton("Ajout employee");
         Ajout1= new JButton("Ajout malade");
+        b=new JButton("OK");
         gestion.setBackground(Color.BLUE);
         // Ajout du bouton "Ajout" dans le Panel Gestion
         gestion.add(Ajout);
         gestion.add(Ajout1);
         Ajout.addActionListener((ActionListener)this);
         Ajout1.addActionListener((ActionListener)this);
-        
+        b.addActionListener((ActionListener)this);
         // Initialisation du Panel Formulaire de Ajout employee
         formulaire= new JPanel();
         formulaire.setBorder(BorderFactory.createTitledBorder("Ajouter un employée")); 
@@ -289,7 +303,7 @@ public class Menu extends JFrame implements ActionListener {
         formulaire.add(lemployee.get(i));
         formulaire.add(jemployee.get(i));
         }
-        
+        formulaire.add(b);
         
       // CREATION DU FORMULAIRE AJOUT MALADE
       
@@ -301,6 +315,7 @@ public class Menu extends JFrame implements ActionListener {
         jmalade.add(new JTextField("Rentrez votre valeur"));
         
         
+        
         lmalade=new ArrayList<>();
         lmalade.add(new JLabel("Un numero"));
         lmalade.add(new JLabel("Un nom"));
@@ -309,12 +324,13 @@ public class Menu extends JFrame implements ActionListener {
         lmalade.add(new JLabel("Un télépone"));
         lmalade.add(new JLabel("Une mutuelle"));
         
+        
         for(int i=0; i<5; i++){
         formulaire1.add(lmalade.get(i));
         formulaire1.add(jmalade.get(i));
         }
         
-        
+        formulaire1.add(b);
         
         
         
@@ -343,9 +359,10 @@ public class Menu extends JFrame implements ActionListener {
         list_Panel.get(i).setVisible((list_button.get(i).equals(e.getSource())));
         }
         }
-        if(Ajout.contains((Point) e.getSource())){
-        Ajout.setVisible(Ajout.equals(e.getSource()));}
         
+        
+        
+
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
@@ -353,8 +370,3 @@ public class Menu extends JFrame implements ActionListener {
 
 }
     
-        
-        
-    
-
-
