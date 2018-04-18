@@ -19,8 +19,8 @@ public class Service {
     private String code;
     private String nom_service;
     private char batiment;
-    protected Docteur directeur; 
-    protected ArrayList<Chambre> liste_ch = new ArrayList<>();// liste de chambres qui sont associé à un service 
+    protected Docteur directeur; // chaque service posséde un directeur qui corresponds lui même à un docteur
+    protected ArrayList<Chambre> liste_ch = new ArrayList<>(); // liste de chambres qui sont associé à un service 
     
     /**
      * CONSTRUCTEUR PAR DEFAUT
@@ -49,11 +49,14 @@ public class Service {
         this.directeur = new Docteur();
         this.directeur.setNumero(num_directeur);
     }
+    
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param code
      * @param nom_service
-     * @param batiment 
+     * @param batiment
+     * @param num_directeur
+     * @param bdd_chambre 
      */
     public Service(String code, String nom_service, char batiment, int num_directeur, Chambre bdd_chambre)
     {
@@ -150,6 +153,11 @@ public class Service {
         String s = "\n" + "         " +this.directeur.toString();
         return "Service{" + "code=" + code + ", nom_service=" + nom_service + ", batiment=" + batiment + ", ASSOCIE AU DIRECTEUR : "  + s+'}';
     }
+
+    /**
+     * suite de l'affichage des renseignements 
+     * @return
+     */
     public String toString2()
     {
         String s_b = "";

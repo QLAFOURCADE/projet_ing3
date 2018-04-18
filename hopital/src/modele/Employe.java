@@ -17,10 +17,10 @@ public class Employe {
      *      utile pour faire le lien et remplir les arraylist comme la BDD
      */
     protected int numero;
-    protected String nom;
-    protected String prenom;
-    protected String adresse;
-    protected String tel;
+    protected String nom; // nom de l'employe
+    protected String prenom; // prenom 
+    protected String adresse; // adresse postale
+    protected String tel; // telephone
     
     /**
      * CONSTRUCTEUR PAR DEFAUT

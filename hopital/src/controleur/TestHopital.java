@@ -34,6 +34,10 @@ public class TestHopital {
         hopital = new Hopital(nameDatabase, loginDatabase, passwordDatabase);
     }
 
+    /**
+     * METHODE : permet de remplir toutes les arralyLists --> copie de la BDD dans le programme
+     * @throws SQLException 
+     */
     public void remplirClasses() throws SQLException
     {
         /**

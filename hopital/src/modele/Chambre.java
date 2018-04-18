@@ -16,6 +16,7 @@ public class Chambre {
      */
     private int num_ch;
     private int nb_lits;
+    // une chambre posséde un surveillant qui est lui meme un infirmier
     protected Infirmier surveillant;
     private String code;
     
@@ -29,11 +30,13 @@ public class Chambre {
         surveillant = new Infirmier();
         code = "";
     }
-    
+
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param num_ch
-     * @param nb_lits 
+     * @param nb_lits
+     * @param inf
+     * @param code
      */
     public Chambre(int num_ch, int nb_lits, int inf, String code)
     {

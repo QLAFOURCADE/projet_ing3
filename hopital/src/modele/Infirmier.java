@@ -15,7 +15,7 @@ public class Infirmier extends Employe {
      * les attributs
      */ 
     private float salaire;
-    private String rotation; // FALSE - JOUR & TRUE - NUIT
+    private String rotation; // JOUR & NUIT
     protected Service s_inf; // un infirmier est associé à un service
     
     /**
@@ -29,6 +29,13 @@ public class Infirmier extends Employe {
         s_inf = new Service();
     }
     
+    /**
+     * CONSTRUCTEUR
+     * @param numero
+     * @param salaire
+     * @param rotation
+     * @param code 
+     */
     public Infirmier(int numero, float salaire, String rotation, String code)
     {
         super();
@@ -41,6 +48,7 @@ public class Infirmier extends Employe {
         s_inf.setCode(code);
         
     }
+    
     /**
      * CONSTRUCTEUR SURCHARGE
      * @param numero
@@ -50,14 +58,14 @@ public class Infirmier extends Employe {
      * @param tel
      * @param _salaire
      * @param _rotation
-     * @param _s_inf 
+     * @param code
      */
     public Infirmier(int numero, String nom, String prenom, String adresse, String tel, float _salaire, String _rotation, String code)
     {
         super(numero, nom, prenom, adresse, tel);
         this.salaire = _salaire;
         this.rotation = _rotation;
-      //  this.s_inf = new Service(code);
+        this.s_inf = new Service();
     }
 
     /**
