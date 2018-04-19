@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package vue;
+import controleur.TestHopital;
 import java.awt.*;
 import static java.awt.BorderLayout.CENTER;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+//import java.awt.event.ActionListener;
 import java.util.ArrayList;
 /*import java.awt.BorderLayout;
 import java.awt.Color;
@@ -26,24 +27,23 @@ import javax.swing.JTextField;*/
  *
  * @author Quiterie
  */
-public class Graphique extends JFrame implements ActionListener {
+public class Graphique extends JFrame {
     
     // CREATION D'UN PANEL CONNEXION
     
-    JPanel hop_connexion,po,option,p1;
+    public JPanel hop_connexion,po,option,p1;
     
     public JButton okay;
     public JTextField bdd;
     public JTextField login;
     public JTextField mdp;
     
-    private ArrayList<JButton> button;
-    public ArrayList<String> renvoi= new ArrayList<>();
-    
-    JPanel p2;
-    JPanel aff_consult;
-    
+    public ArrayList<JButton> button;
    
+    public JPanel p2;
+    public JPanel aff_consult;
+    
+    public int suite = 0;
 
     public Graphique() {
         
@@ -54,43 +54,43 @@ public class Graphique extends JFrame implements ActionListener {
                 this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 this.setLocationRelativeTo(null);
                 this.setLayout(new BorderLayout());
-                this.setResizable(true);
-                this.setVisible(true);
+               // this.setResizable(true);
+               // this.setVisible(true);
         //////////////////////////////CONNEXION/////////////////////////////////////////
-                po= new JPanel();
-                p1= new JPanel();
+        po= new JPanel();
+        p1= new JPanel();
                 
-                hop_connexion = new JPanel();
-                hop_connexion.setPreferredSize(new Dimension(500,700));
-                hop_connexion.setLayout(new GridLayout(0,1));
-                hop_connexion.setBorder(BorderFactory.createTitledBorder("Connection au centre")); 
+        hop_connexion = new JPanel();
+        hop_connexion.setPreferredSize(new Dimension(500,700));
+        hop_connexion.setLayout(new GridLayout(0,1));
+        hop_connexion.setBorder(BorderFactory.createTitledBorder("Connection au centre")); 
                         
-                bdd= new JTextField("");
-                bdd.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-                login=new JTextField("");
+        bdd= new JTextField("");
+        bdd.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        login=new JTextField("");
                 //login.setHorizontalAlignment(BorderLayout.CENTER);
-                mdp=new JTextField("");
-                mdp.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-                okay= new JButton("Valider");
-                okay.addActionListener((ActionListener) this);
+        mdp=new JTextField("");
+        mdp.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        okay= new JButton("Valider");
+        // okay.addActionListener((ActionListener) this);
                 
-                hop_connexion.add(new JLabel("Nom de la base de données",JLabel.CENTER));
-                hop_connexion.add(bdd);
-                hop_connexion.add(new JLabel("Un login",JLabel.CENTER));
-                hop_connexion.add(login);
-                hop_connexion.add(new JLabel("Un mot de passe",JLabel.CENTER));
-                hop_connexion.add(mdp);
-                hop_connexion.add(okay);
-                okay.setBackground(Color.GREEN);
+        hop_connexion.add(new JLabel("Nom de la base de données",JLabel.CENTER));
+        hop_connexion.add(bdd);
+        hop_connexion.add(new JLabel("Un login",JLabel.CENTER));
+        hop_connexion.add(login);
+        hop_connexion.add(new JLabel("Un mot de passe",JLabel.CENTER));
+        hop_connexion.add(mdp);
+        hop_connexion.add(okay);
+        okay.setBackground(Color.GREEN);
                 
-            /////////////////////// OPTIONS ///////////////////////////////////
+        /////////////////////////// OPTIONS ///////////////////////////////////
                 
-            option= new JPanel();
-            option.setPreferredSize(new Dimension(500,700));
-            option.setLayout(new GridLayout(0,1));
-            option.setBorder(BorderFactory.createTitledBorder("Que souhaitez vous faire?"));
+        option= new JPanel();
+        option.setPreferredSize(new Dimension(500,700));
+        option.setLayout(new GridLayout(0,1));
+        option.setBorder(BorderFactory.createTitledBorder("Que souhaitez vous faire?"));
             
-            button=new ArrayList<>();
+        button=new ArrayList<>();
         button.add(new JButton("CONSULTER"));
         button.add(new JButton("RECHERCHE"));
         button.add(new JButton("SUPPRIMER"));
@@ -103,33 +103,27 @@ public class Graphique extends JFrame implements ActionListener {
             option.add(button.get(i));
         }
         
-        for (JButton jButton : button) {
-            //option.add(jButton);
-            jButton.addActionListener((ActionListener) this);
-        }
+        
     //////////////////////// TAB CONSULTER //////////////////////////////////
-    
-    
+ 
                 
-                //// AJOUT A LA FENETRE
+   ////////////////////// AJOUT A LA FENETRE ////////////////////////////////
                 
-                po.add(hop_connexion);
-                this.add(po, BorderLayout.CENTER);
+    po.add(hop_connexion);
+    this.add(po, BorderLayout.CENTER);
+    
+    if (suite == 1)
+    { 
+        po.removeAll();
+        po.add(option, BorderLayout.CENTER);
+        po.repaint();
+        po.revalidate();
+      //  this.add(po, BorderLayout.CENTER);
+    }
+    
                 
         
     }
-     
-    
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
-        
-        
           
-    }
-    
-    
-    
-    
 }
+

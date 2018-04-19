@@ -51,6 +51,7 @@ public class Hopital {
         }
         
     }
+
     
     //////////////////////////// MALADE ////////////////////////////////////////////
     /**
@@ -393,34 +394,7 @@ public class Hopital {
                 return;
         }
     }
-    
-
-        
-        /**
-         *      Arraylist Infirmier
-         */
-/** infirmier methode
-        table = "infirmier";
-        bdd = c_local.remplirChampsTable(table);
-        Infirmier i_tamp;
-        for(int j=1; j<bdd.size(); j++)
-        {
-            // recuperer ligne après ligne le contenu de l'arraylist
-            tampon = bdd.get(j);
-            // diviser en fonction des attributs
-            String t[] = new String[4];
-            t = tampon.split(",");
-            // convertir en int le numero de l'infirmier
-            int t0 = Integer.parseInt(t[0]);
-            // convertir en float le salaire 
-            float t3 = Float.parseFloat(t[3]);
-            // constructeur infirmier : int numero, float salaire, String rotation = t[2] , String code = t[1]
-            i_tamp = new Infirmier(t0,t3,t[2], t[1]);            
-            // ajouter le docteur créer dans la liste contenant tous les docteurs
-            this.inf.add(i_tamp);
-        }
-    }
- */
+   
 
     
     /**

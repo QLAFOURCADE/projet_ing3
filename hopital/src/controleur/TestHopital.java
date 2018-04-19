@@ -6,13 +6,18 @@
 package controleur;
 
 import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.awt.BorderLayout;
+import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import vue.*;
 import java.util.Scanner;
 import modele.*;
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -25,6 +30,20 @@ public class TestHopital implements ActionListener {
     private static Hopital hopital;
     private static Console hop_cons;
     private static Graphique hop_g;
+    
+   // public static List<String> r = new ArrayList<>();
+    
+    
+    public TestHopital()
+    {
+        hop_g.okay.addActionListener(this);
+        for (JButton jButton : hop_g.button) {
+            //option.add(jButton);
+            jButton.addActionListener(this);
+        }
+    }
+    
+    
     /**
      * Constructeur de la classe
      * @param nameDatabase
@@ -36,7 +55,6 @@ public class TestHopital implements ActionListener {
     public TestHopital(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException
     {
         hopital = new Hopital(nameDatabase, loginDatabase, passwordDatabase);
-        hop_g.okay.addActionListener(this);
     }
 
     /**
@@ -58,17 +76,43 @@ public class TestHopital implements ActionListener {
         hopital.remplir_chambre();
         hopital.remplir_service();
     }
-    public void Control(ArrayList<String> s){
+    
+    
+    /**
+     * METHODE : effectuer une action quand on appuie sur un bouton
+     * @param e 
+     */
+    @Override
+    public void actionPerformed(ActionEvent e) {
         
-        System.out.println("Coucou222"); 
+        Object source = e.getSource();
         
-            for(String list : s)
-        {
-            System.out.println("Coucou");
-            System.out.println(list);
-        }
+        if(source==hop_g.okay){
+            // Récupération des entrées de Connection
+            String a= hop_g.bdd.getText();
+            String l= hop_g.login.getText();
+            String m= hop_g.mdp.getText();
+            // Mise dans une liste envoie au controleur
             
-        
+            this.Control(a, l, m);
+        }
+    }
+    
+
+    /**
+     * METHODE : vérifier et créer une connexion avec la bdd
+     * @param a
+     * @param b
+     * @param c 
+     */
+    public void Control(String a, String b, String c){
+        try {
+            this.hopital = new Hopital(a, b, c);
+            hop_g.suite = 1;
+        }
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null,"Mauvaise entrée!");
+        }
         
     }
     
@@ -83,64 +127,19 @@ public class TestHopital implements ActionListener {
         /**
          * initialisation 
          */
+        hop_g = new Graphique();
         hop_cons = new Console();
         
-
-        /**
-         * demande de rentrer les informations CONSOLE
-         * recuperer les données tapées au clavier 
-         */
-        /**
-        System.out.println("Nom de la base :");
-        String nom_base = hop_cons.toString();
-        
-        System.out.println("Login :");
-        String login = hop_cons.toString();
-        
-        System.out.println("Password :");
-        String pass = hop_cons.toString();
-        
-        /**
-         * creation de la connexion après verifiation
-         */
-        
         TestHopital test_h;
-        hop_g= new Graphique();
         //test_h = new TestHopital(nom_base, login, pass);
+            /// pour la copie de la bdd dans la classe 
         test_h = new TestHopital("hopital", "root", "");
         
-        test_h.remplirClasses();
         test_h.hop_g.setVisible(true);
+        test_h.remplirClasses();
+       
         //hopital.affichage_uneliste(hop_cons.menu());
-        
-        
-        test_h.Control(hop_g.renvoi);
-        
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        
-        Object source = e.getSource();
-        ArrayList<String> renvoi= new ArrayList<>();
-        
-        if(source==hop_g.okay){
-            System.out.println("vue.Graphique.actionPerformed()");
-            // Récupération des entrées de Connection
-            String a=new String(hop_g.bdd.getText());
-            String l=new String(hop_g.login.getText());;
-            String m= new String(hop_g.mdp.getText());;
-            // Mise dans une liste envoie au controleur
-            renvoi.add(a);
-            renvoi.add(l);
-            renvoi.add(m);
-            
-            
-            
-    
-   
-        }
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
