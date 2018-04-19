@@ -16,6 +16,15 @@ public class DocteurDAO extends DAO<Docteur> {
   }
 
   public boolean create(Docteur obj) {
+    try{
+            //ATTENTION IL FAUT QUE GETNUMERO CORRESPONDE AU NUMERO D'UN EMPLOYE
+            int result = this.connect.createStatement(
+            ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("INSERT INTO chambre VALUES ('"+ obj.getNumero() + "','" + obj.getSpecialite()+"')");
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            }
     return false;
   }
 
