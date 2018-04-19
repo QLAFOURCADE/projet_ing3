@@ -56,7 +56,17 @@ public class Graphique extends JFrame {
                 this.setLayout(new BorderLayout());
                // this.setResizable(true);
                // this.setVisible(true);
-        //////////////////////////////CONNEXION/////////////////////////////////////////
+       
+        okay= new JButton("Valider");
+        button=new ArrayList<>();
+    }
+    
+    /**
+     * METHODE : afficher le premier panel : le menu de connexion 
+     */
+     //////////////////////////////CONNEXION/////////////////////////////////////////
+    public void connexion()
+    {
         po= new JPanel();
         p1= new JPanel();
                 
@@ -71,7 +81,7 @@ public class Graphique extends JFrame {
                 //login.setHorizontalAlignment(BorderLayout.CENTER);
         mdp=new JTextField("");
         mdp.setHorizontalAlignment((int) CENTER_ALIGNMENT);
-        okay= new JButton("Valider");
+        
         // okay.addActionListener((ActionListener) this);
                 
         hop_connexion.add(new JLabel("Nom de la base de données",JLabel.CENTER));
@@ -82,7 +92,19 @@ public class Graphique extends JFrame {
         hop_connexion.add(mdp);
         hop_connexion.add(okay);
         okay.setBackground(Color.GREEN);
-                
+        
+               
+        po.add(hop_connexion);
+        //this.add(po, BorderLayout.CENTER);
+        setContentPane(po);
+    }
+    
+    /**
+     * METHODE : afficher les options à l'utilisateur
+     *              possible qu'après une bonne entrée des éléments de la connexion
+     */
+    public void panel_deux()
+    {
         /////////////////////////// OPTIONS ///////////////////////////////////
                 
         option= new JPanel();
@@ -90,7 +112,7 @@ public class Graphique extends JFrame {
         option.setLayout(new GridLayout(0,1));
         option.setBorder(BorderFactory.createTitledBorder("Que souhaitez vous faire?"));
             
-        button=new ArrayList<>();
+        
         button.add(new JButton("CONSULTER"));
         button.add(new JButton("RECHERCHE"));
         button.add(new JButton("SUPPRIMER"));
@@ -103,27 +125,20 @@ public class Graphique extends JFrame {
             option.add(button.get(i));
         }
         
+        po.removeAll();
+        po.repaint();
+        po.add(option, BorderLayout.CENTER);
+        po.revalidate();
+        //setContentPane(po);
+
+    }
         
     //////////////////////// TAB CONSULTER //////////////////////////////////
  
                 
    ////////////////////// AJOUT A LA FENETRE ////////////////////////////////
-                
-    po.add(hop_connexion);
-    this.add(po, BorderLayout.CENTER);
-    
-    if (suite == 1)
-    { 
-        po.removeAll();
-        po.add(option, BorderLayout.CENTER);
-        po.repaint();
-        po.revalidate();
-      //  this.add(po, BorderLayout.CENTER);
-    }
-    
-                
-        
-    }
+       
+  
           
 }
 

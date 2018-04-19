@@ -33,7 +33,10 @@ public class TestHopital implements ActionListener {
     
    // public static List<String> r = new ArrayList<>();
     
-    
+    /**
+     * CONSTRUCTEUR : de la classe
+     *              on implémente ici l'action des boutons 
+     */
     public TestHopital()
     {
         hop_g.okay.addActionListener(this);
@@ -41,6 +44,7 @@ public class TestHopital implements ActionListener {
             //option.add(jButton);
             jButton.addActionListener(this);
         }
+ 
     }
     
     
@@ -107,8 +111,8 @@ public class TestHopital implements ActionListener {
      */
     public void Control(String a, String b, String c){
         try {
-            this.hopital = new Hopital(a, b, c);
-            hop_g.suite = 1;
+            TestHopital.hopital = new Hopital(a, b, c);
+            TestHopital.hop_g.panel_deux();
         }
         catch (Exception e) {
             JOptionPane.showMessageDialog(null,"Mauvaise entrée!");
@@ -123,21 +127,27 @@ public class TestHopital implements ActionListener {
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         // TODO code application logic here
+
+        hop_g = new Graphique();
+        hop_cons = new Console();
+        
+        TestHopital test_2 = new TestHopital("hopital", "root", "");
+        
+        //test_h = new TestHopital(nom_base, login, pass);
+            /// pour la copie de la bdd dans la classe 
+        
+        test_2.remplirClasses();
+        
+        TestHopital test_h = new TestHopital();
+        
         
         /**
          * initialisation 
          */
-        hop_g = new Graphique();
-        hop_cons = new Console();
-        
-        TestHopital test_h;
-        //test_h = new TestHopital(nom_base, login, pass);
-            /// pour la copie de la bdd dans la classe 
-        test_h = new TestHopital("hopital", "root", "");
-        
+        test_h.hop_g.connexion();
         test_h.hop_g.setVisible(true);
-        test_h.remplirClasses();
-       
+        
+
         //hopital.affichage_uneliste(hop_cons.menu());
 
     }
