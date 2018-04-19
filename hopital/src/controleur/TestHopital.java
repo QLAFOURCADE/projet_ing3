@@ -5,10 +5,14 @@
  */
 package controleur;
 
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import vue.*;
 import java.util.Scanner;
 import modele.*;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 /**
@@ -16,11 +20,11 @@ import java.sql.*;
  * @author Quiterie
  * on sait aider du TP3 Labyrinthe : prendre exemple pour le systeme MVC et faire la connexion local
  */
-public class TestHopital {
+public class TestHopital implements ActionListener {
     
     private static Hopital hopital;
     private static Console hop_cons;
-    
+    private static Graphique hop_g;
     /**
      * Constructeur de la classe
      * @param nameDatabase
@@ -53,6 +57,19 @@ public class TestHopital {
         hopital.remplir_chambre();
         hopital.remplir_service();
     }
+    public void Control(ArrayList<String> s){
+        
+        System.out.println("Coucou222"); 
+        
+            for(String list : s)
+        {
+            System.out.println("Coucou");
+            System.out.println(list);
+        }
+            
+        
+        
+    }
     
     /**
      * @param args the command line arguments
@@ -66,7 +83,7 @@ public class TestHopital {
          * initialisation 
          */
         hop_cons = new Console();
-        Menu m= new Menu();
+        
 
         /**
          * demande de rentrer les informations CONSOLE
@@ -91,7 +108,16 @@ public class TestHopital {
         test_h = new TestHopital("hopital", "root", "");
         
         test_h.remplirClasses();
-        hopital.affichage_uneliste(hop_cons.menu());
+        //hopital.affichage_uneliste(hop_cons.menu());
+        
+        hop_g= new Graphique();
+        test_h.Control(hop_g.renvoi);
+        
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

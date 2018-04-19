@@ -5,6 +5,8 @@
  */
 package vue;
 
+
+import controleur.Connexion;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -15,7 +17,10 @@ import java.awt.Point;
 import static java.awt.SystemColor.menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import static javax.swing.Box.createVerticalBox;
@@ -24,6 +29,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.AbstractAction;
 
 /**
  *
@@ -359,12 +365,41 @@ public class Menu extends JFrame implements ActionListener {
         list_Panel.get(i).setVisible((list_button.get(i).equals(e.getSource())));
         }
         }
+        if (Ajout1==e.getSource()) {
+            
+            formulaire1.setVisible(Ajout1.equals(e.getSource()));
+            
+        }
+        else
+        {formulaire.setVisible(Ajout.equals(e.getSource()));}
+        for (int i=0; i<5; i++) {
+            
+            if(list_button.get(0)==e.getSource())
+            {
+                
+            }
+            if(list_button.get(1)==e.getSource())
+            {
+                
+            }
+            if(list_button.get(2)==e.getSource())
+            {
+                
+            }
+            if(list_button.get(3)==e.getSource())
+            {
+                
+            }
+            if(list_button.get(4)==e.getSource())
+            {
+                
+            }
+        }
         
-        
-        
-
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
     
 
 
