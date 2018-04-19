@@ -5,6 +5,8 @@
  */
 package modele;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Quiterie
@@ -137,6 +139,19 @@ public class Employe {
     @Override
     public String toString() {
         return "Employe{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + '}';
+    }
+    
+    
+    public String insert_employe(String cle, String nom, String prenom, String adresse, String tel)
+    {
+        // table = docteur ; vu qu'on est dans la classe Docteur
+        // la cle est le numéro de l'employe le meme que le docteur !
+                // arraylist avec attributs employé à envoyer pour classe methode classe mère
+        // Insert une donné dans la base de donnée
+                  // Employe : INSERT INTO employe VALUES ('numero', 'nom', 'prenom', 'adresse', 'tel')
+        String querry = "INSERT INTO employe VALUES('" + cle + "', '" + nom +"', '" + prenom + "', '" + adresse+ "', '" + tel +"')";
+        
+        return querry;
     }
     
 }

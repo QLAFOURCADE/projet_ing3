@@ -394,9 +394,7 @@ public class Hopital {
                 return;
         }
     }
-   
 
-    
     /**
      * METHODE : pour ajouter dans la BDD
      * @return 

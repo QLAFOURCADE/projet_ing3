@@ -78,6 +78,7 @@ public class Graphique extends JFrame {
         bdd= new JTextField("");
         bdd.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         login=new JTextField("");
+        login.setHorizontalAlignment((int) CENTER_ALIGNMENT);
                 //login.setHorizontalAlignment(BorderLayout.CENTER);
         mdp=new JTextField("");
         mdp.setHorizontalAlignment((int) CENTER_ALIGNMENT);

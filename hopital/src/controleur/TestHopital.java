@@ -90,7 +90,7 @@ public class TestHopital implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
         Object source = e.getSource();
-        
+        // pour le bouton valider du menu connexion 
         if(source==hop_g.okay){
             // Récupération des entrées de Connection
             String a= hop_g.bdd.getText();
@@ -100,6 +100,9 @@ public class TestHopital implements ActionListener {
             
             this.Control(a, l, m);
         }
+        
+        // pour les boutons du menu 
+        
     }
     
 
@@ -146,7 +149,6 @@ public class TestHopital implements ActionListener {
          */
         test_h.hop_g.connexion();
         test_h.hop_g.setVisible(true);
-        
 
         //hopital.affichage_uneliste(hop_cons.menu());
 
