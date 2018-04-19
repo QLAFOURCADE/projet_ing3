@@ -30,15 +30,19 @@ public class Graphique extends JFrame implements ActionListener {
     
     // CREATION D'UN PANEL CONNEXION
     
-    JPanel hop_connexion,po,option;
+    JPanel hop_connexion,po,option,p1;
     
-    JButton okay;
-    JTextField bdd;
-    JTextField login;
-    JTextField mdp;
+    public JButton okay;
+    public JTextField bdd;
+    public JTextField login;
+    public JTextField mdp;
     
     private ArrayList<JButton> button;
     public ArrayList<String> renvoi= new ArrayList<>();
+    
+    JPanel p2;
+    JPanel aff_consult;
+    
    
 
     public Graphique() {
@@ -54,6 +58,7 @@ public class Graphique extends JFrame implements ActionListener {
                 this.setVisible(true);
         //////////////////////////////CONNEXION/////////////////////////////////////////
                 po= new JPanel();
+                p1= new JPanel();
                 
                 hop_connexion = new JPanel();
                 hop_connexion.setPreferredSize(new Dimension(500,700));
@@ -93,13 +98,21 @@ public class Graphique extends JFrame implements ActionListener {
         button.add(new JButton("METTRE A JOUR"));
         button.add(new JButton("REPORTING"));
         
+        for(int i=0; i<6; i++)
+        {
+            option.add(button.get(i));
+        }
+        
         for (JButton jButton : button) {
             //option.add(jButton);
             jButton.addActionListener((ActionListener) this);
         }
-                
+    //////////////////////// TAB CONSULTER //////////////////////////////////
+    
+    
                 
                 //// AJOUT A LA FENETRE
+                
                 po.add(hop_connexion);
                 this.add(po, BorderLayout.CENTER);
                 
@@ -111,25 +124,7 @@ public class Graphique extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        Object source = e.getSource();
         
-        if(source==okay){
-            System.out.println("vue.Graphique.actionPerformed()");
-            // Récupération des entrées de Connection
-            String a=new String(bdd.getText());
-            String l=new String(login.getText());;
-            String m= new String(mdp.getText());;
-            // Mise dans une liste envoie au controleur
-            renvoi.add(a);
-            renvoi.add(l);
-            renvoi.add(m);
-            
-            this.removeAll();
-            this.add(option);
-            
-    
-   
-        }
         
           
     }

@@ -36,6 +36,7 @@ public class TestHopital implements ActionListener {
     public TestHopital(String nameDatabase, String loginDatabase, String passwordDatabase) throws SQLException, ClassNotFoundException
     {
         hopital = new Hopital(nameDatabase, loginDatabase, passwordDatabase);
+        hop_g.okay.addActionListener(this);
     }
 
     /**
@@ -104,19 +105,41 @@ public class TestHopital implements ActionListener {
          */
         
         TestHopital test_h;
+        hop_g= new Graphique();
         //test_h = new TestHopital(nom_base, login, pass);
         test_h = new TestHopital("hopital", "root", "");
         
         test_h.remplirClasses();
+        test_h.hop_g.setVisible(true);
         //hopital.affichage_uneliste(hop_cons.menu());
         
-        hop_g= new Graphique();
+        
         test_h.Control(hop_g.renvoi);
         
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        
+        Object source = e.getSource();
+        ArrayList<String> renvoi= new ArrayList<>();
+        
+        if(source==hop_g.okay){
+            System.out.println("vue.Graphique.actionPerformed()");
+            // Récupération des entrées de Connection
+            String a=new String(hop_g.bdd.getText());
+            String l=new String(hop_g.login.getText());;
+            String m= new String(hop_g.mdp.getText());;
+            // Mise dans une liste envoie au controleur
+            renvoi.add(a);
+            renvoi.add(l);
+            renvoi.add(m);
+            
+            
+            
+    
+   
+        }
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
