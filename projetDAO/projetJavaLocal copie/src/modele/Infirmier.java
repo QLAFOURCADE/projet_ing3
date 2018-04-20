@@ -15,9 +15,10 @@ public class Infirmier extends Employe {
      * les attributs
      */ 
     private int numero;
+    private String code_service;
+    private String rotation; // 0 - JOUR & 1 - NUIT
     private int salaire;
-    private boolean rotation; // 0 - JOUR & 1 - NUIT
-    private String code_service; 
+    
     
     
     
@@ -35,7 +36,7 @@ public class Infirmier extends Employe {
      * @param _rotation
      * @param _s_inf 
      */
-    public Infirmier(int numero, int salaire, boolean rotation, String code_service)
+    public Infirmier(int numero,String code_service, String rotation,  int salaire )
     {
         this.numero = numero;
         this.salaire = salaire;
@@ -68,7 +69,7 @@ public class Infirmier extends Employe {
      * 0 = JOUR & 1 = NUIT
      * @return rotation
      */
-    public boolean getRotation() {
+    public String getRotation() {
         return rotation;
     }
     
@@ -102,7 +103,7 @@ public class Infirmier extends Employe {
      * METHODE : setter - modifier l'attribut rotation
      * @param rotation 
      */
-    public void setRotation(boolean rotation) {
+    public void setRotation(String rotation) {
         this.rotation = rotation;
     }
 
@@ -110,7 +111,7 @@ public class Infirmier extends Employe {
      * METHODE : setter - modifier l'attribut code_service
      * @param code_service 
      */
-    public void setRotation(String code_service) {
+    public void setCodeService(String code_service) {
         this.code_service = code_service;
     }
 

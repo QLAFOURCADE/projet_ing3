@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Quiterie
+ * @author Pierre-Louis
  */
 public class Service {
     
@@ -15,10 +15,11 @@ public class Service {
      * les attributs 
      */
     private String code;
-    private String nom_service;
+    private String nom;
     private char batiment;
     private Docteur directeur; 
-    // liste de chambres qui sont associé à un service 
+    
+    
     
     
     

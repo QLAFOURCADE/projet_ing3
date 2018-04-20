@@ -101,5 +101,13 @@ public class Chambre {
         this.surveillant=idSurveillant;
     }
     
+    //Tostring
+     @Override
+    public String toString() {
+        return "\n"+ "Numero de chambre : " + num_ch + "\n" + "Nombre de lits : " + nb_lits + "\n" + "Surveillant : " + surveillant + "\n" + 
+                "Code Service : " + code_service + "\n";
+    }   
+    
+    
     
 }

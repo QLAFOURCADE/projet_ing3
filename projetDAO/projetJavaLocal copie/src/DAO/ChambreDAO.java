@@ -79,7 +79,9 @@ public class ChambreDAO extends DAO<Chambre> {
         ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM chambre WHERE no_chambre = " + num_ch);
       if(result.first())
         chambre = new Chambre(
+          result.getString("code_service"),
           num_ch,
+          result.getInt("surveillant"),
           result.getInt("nb_lits")
           );         
     } catch (SQLException e) {
