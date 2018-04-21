@@ -158,4 +158,39 @@ public class Malade {
         return "Malade{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + ", mutuelle=" + mutuelle + '}';
     }
     
+    /**
+     * METHODE : pour comparer appliquer a la classe Malade
+     * @param object
+     * @return 
+     */
+     @Override
+    public boolean equals(Object object) {
+
+        if (object instanceof Malade) {
+            Malade mal = (Malade) object;
+            if ((mal.numero == numero) && (nom.equals(mal.nom)) && (prenom.equals(mal.prenom)) && (adresse.equals(mal.adresse)) && (tel.equals(mal.tel)) /* && autres condition*/) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
+    }
+    
+    public String[] insert_malade(String cle, String nom, String prenom, String adresse, String tel, String mutuelle)
+    {
+        // table = malade ; vu qu'on est dans la classe Malade
+        // la cle est le numéro du malade !
+                // arraylist avec attributs employé à envoyer pour classe methode classe mère
+        // Insert une donné dans la base de donnée
+            // Docteur : INSERT INTO malade VALUES ('numero', 'nom', 'prenom', 'adresse', 'tel', 'mutuelle')
+        String querry = "INSERT INTO malade VALUES ('" + cle + "', '" + nom + "', '" + prenom+ "', '"+  adresse + "', '"+ tel + "', '"+ mutuelle + "')";
+        String querry2 = "";
+        
+        String q [] = {querry, querry2};
+        return q;
+    }
+    
+    
 }

@@ -149,21 +149,28 @@ public class Employe {
                 // arraylist avec attributs employé à envoyer pour classe methode classe mère
         // Insert une donné dans la base de donnée
                   // Employe : INSERT INTO employe VALUES ('numero', 'nom', 'prenom', 'adresse', 'tel')
-        String querry = "INSERT INTO employe VALUES('" + cle + "', '" + nom +"', '" + prenom + "', '" + adresse+ "', '" + tel +"')";
+        String querry = "INSERT INTO employe VALUES ('" + cle + "', '" + nom +"', '" + prenom + "', '" + adresse+ "', '" + tel +"')";
         
         return querry;
     }
     
-    public String delete_employe(String cle, String nom, String prenom, String adresse, String tel)
-    {
-        // table = docteur ; vu qu'on est dans la classe Docteur
-        // la cle est le numéro de l'employe le meme que le docteur !
-                // arraylist avec attributs employé à envoyer pour classe methode classe mère
-        // Insert une donné dans la base de donnée
-                  // Employe : INSERT INTO employe VALUES ('numero', 'nom', 'prenom', 'adresse', 'tel')
-        String querry = "INSERT INTO employe VALUES('" + cle + "', '" + nom +"', '" + prenom + "', '" + adresse+ "', '" + tel +"')";
-        
-        return querry;
+    @Override
+    public boolean equals(Object object) {
+
+        if (object instanceof Employe) {
+            Employe emp = (Employe) object;
+           // System.out.println(emp.numero +"//"+numero);
+            if ((nom.equals(emp.nom)) && (prenom.equals(emp.prenom)) && (adresse.equals(emp.adresse)) && (tel.equals(emp.tel)) /* && autres condition*/) {
+                System.out.println(emp.numero +"//"+numero);
+                if (numero == emp.numero)
+                {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
     }
-    
 }

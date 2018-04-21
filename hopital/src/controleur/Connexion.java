@@ -25,7 +25,7 @@ public class Connexion {
      * requete
      */
     private Connection conn;
-    private Statement stmt;
+    public Statement stmt;
     private ResultSet rset;
     private ResultSetMetaData rsetMeta;
     

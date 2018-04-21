@@ -6,9 +6,13 @@
 package vue;
 
 // importation de toute les classes du packages Modele + fonction java.sql utilisé par la classe connexion
+import controleur.Connexion;
+import controleur.TestHopital;
 import java.sql.*;
+import java.util.ArrayList;
 import modele.*;
 import java.util.Scanner;
+import java.sql.SQLException;
 
 /**
  *
@@ -16,10 +20,15 @@ import java.util.Scanner;
  */
 public class Console {
     
+    private final Connexion c ;
     /**
      * attributs de la classe
      */
     Scanner clavier = new Scanner(System.in);
+
+    public Console() throws SQLException, ClassNotFoundException {
+        this.c = new Connexion("hopital", "root", "");
+    }
     
     /**
      * Pour créer une variable avec les éléments tapers au clavier 
@@ -57,4 +66,5 @@ public class Console {
         // renvoie le numero choisit : premier caractère des lignes affichées
         return entree.charAt(0);
     }
+
 }

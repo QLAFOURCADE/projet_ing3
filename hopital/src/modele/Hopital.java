@@ -22,13 +22,13 @@ public class Hopital {
      * peut rajouter connexion ece à distance ????
      * protected : accés possible que pour les methodes dans classes + heritage
      */
-    protected Connexion c_local;
-    private ArrayList<Docteur> doc = new ArrayList<>(); 
-    private ArrayList<Infirmier> inf = new ArrayList<>();
+    public Connexion c_local;
+    public ArrayList<Docteur> doc = new ArrayList<>(); 
+    public ArrayList<Infirmier> inf = new ArrayList<>();
     private ArrayList<Service> s = new ArrayList<>();
-    private ArrayList<Malade> m = new ArrayList<>();
+    public ArrayList<Malade> m = new ArrayList<>();
     private ArrayList<Chambre> c = new ArrayList<>();
-    private ArrayList<Employe> emp = new ArrayList<>();
+    public ArrayList<Employe> emp = new ArrayList<>();
     
     
     /**
@@ -285,7 +285,7 @@ public class Hopital {
             t = list.split(",");      
             // convertir en int le numero de l'infirmier
             int t0 = Integer.parseInt(t[0]);
-            float t3 = Float.parseFloat(t[3]);
+            double t3 = Double.parseDouble(t[3]);
             // constructeur infirmier : int numero, float salaire, String rotation, String code
             Infirmier i_tamp = new Infirmier(t0,t3,t[2],t[1]);
             
@@ -393,6 +393,19 @@ public class Hopital {
             default:
                 return;
         }
+    }
+
+    /**
+     * supprimer toute les arraylist
+     */
+    public void supprimer()
+    {
+        this.c.clear();
+        this.doc.clear();
+        this.emp.clear();
+        this.inf.clear();
+        this.m.clear();
+        this.s.clear();
     }
 
     /**

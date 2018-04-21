@@ -94,13 +94,11 @@ public class Docteur extends Employe{
             // Docteur : INSERT INTO docteur VALUES ('numero', 'specialite')
         String querry = "INSERT INTO docteur VALUES ('" + cle + "', '" +att_spe + "')";
         String querry2;
-        querry2 = this.insert_employe(cle, nom, prenom, adresse, tel);
         
+        querry2 = this.insert_employe(cle,nom, prenom, adresse, tel);
         String q [] = {querry, querry2};
         
         return q;
     }
-    
-    
     
 }

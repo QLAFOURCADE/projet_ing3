@@ -14,7 +14,7 @@ public class Infirmier extends Employe {
     /**
      * les attributs
      */ 
-    private float salaire;
+    private double salaire;
     private String rotation; // JOUR & NUIT
     protected Service s_inf; // un infirmier est associé à un service
     
@@ -36,7 +36,7 @@ public class Infirmier extends Employe {
      * @param rotation
      * @param code 
      */
-    public Infirmier(int numero, float salaire, String rotation, String code)
+    public Infirmier(int numero, double salaire, String rotation, String code)
     {
         super();
         this.numero = numero;
@@ -60,7 +60,7 @@ public class Infirmier extends Employe {
      * @param _rotation
      * @param code
      */
-    public Infirmier(int numero, String nom, String prenom, String adresse, String tel, float _salaire, String _rotation, String code)
+    public Infirmier(int numero, String nom, String prenom, String adresse, String tel, double _salaire, String _rotation, String code)
     {
         super(numero, nom, prenom, adresse, tel);
         this.salaire = _salaire;
@@ -72,7 +72,7 @@ public class Infirmier extends Employe {
      * METHODE : getter - lire l'attribut salaire
      * @return salaire
      */
-    public float getSalaire()
+    public double getSalaire()
     {
         return salaire;
     }
@@ -96,7 +96,7 @@ public class Infirmier extends Employe {
      * METHODE : setter - modifier l'attribut salaire
      * @param salaire 
      */
-    public void setSalaire(float salaire) {
+    public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
 
@@ -125,6 +125,33 @@ public class Infirmier extends Employe {
      */
     ////////////////////////////////////// A FAIRE !!!!!!!!!!!! ///////////////////////////////
 
+    /**
+     * METHODE :  créer une requete pour l'éffectuer dans controleur après
+     * @param cle
+     * @param nom
+     * @param prenom
+     * @param adresse
+     * @param tel
+     * @param rotation
+     * @param salaire
+     * @param code_serv
+     * @return 
+     */
+    public String[] insert_inf(String cle, String nom, String prenom, String adresse, String tel, String rotation, String salaire, String code_serv)
+    {
+        // table = infirmier ; vu qu'on est dans la classe Infirmier
+        // la cle est le numéro du infirmier !
+                // arraylist avec attributs employé à envoyer pour classe methode classe mère
+        // Insert une donné dans la base de donnée
+            // Infirmier : INSERT INTO infirmier VALUES ('numero', 'code_service', 'rotation', 'salaire')
+        String querry = "INSERT INTO infirmier VALUES ('" + cle + "', '" + code_serv + "', '" + rotation + "', '"+  salaire + "')";
+        String querry2;
+        
+        querry2 = this.insert_employe(cle,nom, prenom, adresse, tel);
+        String q [] = {querry, querry2};
+        
+        return q;
+    }
     
             
 }
