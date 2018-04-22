@@ -17,7 +17,7 @@ public class Infirmier extends Employe {
     private int numero;
     private String code_service;
     private String rotation; // 0 - JOUR & 1 - NUIT
-    private int salaire;
+    private double salaire;
     
 
     /**
@@ -36,7 +36,7 @@ public class Infirmier extends Employe {
      * @param _rotation
      * @param _s_inf 
      */
-    public Infirmier(int numero,String code_service, String rotation,  int salaire )
+    public Infirmier(int numero,String code_service, String rotation,  double salaire )
     {
         this.numero = numero;
         this.salaire = salaire;
@@ -59,7 +59,7 @@ public class Infirmier extends Employe {
      * METHODE : getter - lire l'attribut salaire
      * @return salaire
      */
-    public int getSalaire()
+    public double getSalaire()
     {
         return salaire;
     }
@@ -94,7 +94,7 @@ public class Infirmier extends Employe {
      * METHODE : setter - modifier l'attribut salaire
      * @param salaire 
      */
-    public void setSalaire(int salaire) {
+    public void setSalaire(double salaire) {
         this.salaire = salaire;
     }
 
@@ -115,4 +115,13 @@ public class Infirmier extends Employe {
     }
 
             
+    /**
+     * METHODE : pour console
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Infirmier{" + "numero=" + numero + ", code_service=" + code_service + ", rotation=" + rotation + ", salaire=" + salaire + '}';
+    }
+
 }

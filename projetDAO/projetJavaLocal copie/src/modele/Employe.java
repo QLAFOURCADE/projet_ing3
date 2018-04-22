@@ -123,5 +123,13 @@ public class Employe {
         this.tel = tel;
     }
 
-    
+    /**
+     * METHODE : pour la console
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Employe{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + '}';
+    }
+
 }

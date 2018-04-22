@@ -144,7 +144,14 @@ public class Malade {
         this.mutuelle = mutuelle;
     }
     
-    
+     /**
+     * METHODE : pour la console
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Malade{" + "numero=" + numero + ", nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", tel=" + tel + ", mutuelle=" + mutuelle + '}';
+    }
     
     
 }

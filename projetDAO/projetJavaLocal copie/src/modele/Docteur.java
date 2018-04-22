@@ -69,4 +69,14 @@ public class Docteur extends Employe{
     public void setNumero(int numero) {
         this.numero = numero;
     } 
+    
+       /**
+     * METHODE : pour la partie console
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Docteur{" + "specialite=" + specialite + ", numero=" + numero + '}';
+    }
+    
 }

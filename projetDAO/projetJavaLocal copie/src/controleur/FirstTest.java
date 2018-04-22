@@ -23,13 +23,31 @@ import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+
+
+/*********************************************************************************************************************************************
+ * **************************************************************************************************************************************
+ *                                      PROJET ING 3 2018 - PROMO 2020
+ *                                  Gestion informatique d'un centre hospitalier
+ ***************************************************************************************************************************************************                                  
+ ************************************************************************************************************************************************
+ *                                      NOS AIDES POUR LE PROJET
+ * http://sql.sh/cours/insert-into
+ * toutes les pages de openclassrooms sur le java : https://openclassrooms.com/courses/apprenez-a-programmer-en-java/
+ *                  https://openclassrooms.com/courses/apprenez-a-programmer-en-java/lier-ses-tables-avec-des-objets-java-le-pattern-dao
+ * tous les documents d'aide sur campus projet et cours java : http://campus.ece.fr/course/view.php?id=1911
+ * plusieurs chapitres sur le graphisme sur ce site : https://www.jmdoudoux.fr/java/dej/indexavecframes.htm
+ * les aide dans JBDC de M.Segado 
+ */
+
+
 /**
  *
  * @author Tiphaine, Quiterie, Pierre-Louis
  */
 
 public class FirstTest { 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws SQLException, ClassNotFoundException {
      
     /*
     //Testons des chambres
@@ -119,7 +137,9 @@ public class FirstTest {
      */
     FenetreConnexion f = new FenetreConnexion();
     
-    
+    Hopital h = new Hopital();
+    h.remplir();
+    h.affichage_uneliste('7');
     
     
 }

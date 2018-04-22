@@ -107,7 +107,14 @@ public class Service {
     }
     
     
-    
-    
+      /**
+     * METHODE : pour la console
+     * @return 
+     */
+    @Override
+    public String toString() {
+        return "Service{" + "code=" + code + ", nom=" + nom + ", batiment=" + batiment + ", directeur=" + directeur + '}';
+    }
+   
     
 }
