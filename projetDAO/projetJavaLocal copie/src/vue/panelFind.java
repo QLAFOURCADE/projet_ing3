@@ -39,13 +39,13 @@ public class panelFind extends JPanel {
     
     
     //Chambre
-    panelUpdateChambre card1 = new panelUpdateChambre();
+    panelFindChambre card1 = new panelFindChambre();
     card1.setBackground(Color.blue);	
     //Malade
-    panelUpdateMalade card2 = new panelUpdateMalade();
+    panelFindMalade card2 = new panelFindMalade();
     card2.setBackground(Color.red);	
-    //Infirmier
-    panelUpdateInfirmier card3 = new panelUpdateInfirmier();
+    //Employé
+    panelFindEmploye card3 = new panelFindEmploye();
     card3.setBackground(Color.green);
     //Docteur
     panelUpdateDocteur card4 = new panelUpdateDocteur();
@@ -65,7 +65,7 @@ public class panelFind extends JPanel {
     // REMPLISSAGE DU BOUTONPANE
     JButton bouton_chambre = new JButton("Chambre");
     JButton bouton_malade = new JButton("Malade");
-    JButton bouton_infirmier = new JButton("Infirmier");
+    JButton bouton_employe = new JButton("Employé");
     JButton bouton_docteur = new JButton("Docteur");
     JButton bouton_service = new JButton("Service");
     JButton bouton_soigne = new JButton("Soigne");
@@ -74,7 +74,7 @@ public class panelFind extends JPanel {
     //On ajoute le bouton au content pane de la JFrame 
     boutonPane.add(bouton_chambre); 
     boutonPane.add(bouton_malade); 
-    boutonPane.add(bouton_infirmier); 
+    boutonPane.add(bouton_employe); 
     boutonPane.add(bouton_docteur); 
     boutonPane.add(bouton_service); 
     boutonPane.add(bouton_soigne); 
@@ -99,7 +99,7 @@ public class panelFind extends JPanel {
     
       
     //Définition de l'action du bouton Infirmier
-    bouton_infirmier.addActionListener(new ActionListener(){
+    bouton_employe.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
          cl.show(content, listContent[2]);
