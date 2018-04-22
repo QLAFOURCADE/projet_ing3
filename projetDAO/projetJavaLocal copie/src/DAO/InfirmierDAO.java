@@ -35,7 +35,7 @@ public class InfirmierDAO extends DAO<Infirmier> {
     return false;
     }
 
-  
+  //Supprimer
   public boolean delete(Infirmier obj) {
                 try{
             
@@ -58,7 +58,7 @@ public class InfirmierDAO extends DAO<Infirmier> {
          
             int result = this.connect.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE,
-            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE infirmier SET code_service='" +obj.getCodeService()+"', rotation ='"+obj.getRotation()+"', salaire ='"+obj.getSalaire()+"' WHERE numero = '" + obj.getNumero()+ "'");
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE infirmier SET code_service='" +obj.getCodeService()+"' WHERE CONCAT(`infirmier`.`numero`) = '" + obj.getNumero()+ "'");
                         
         }
         catch (SQLException e) {

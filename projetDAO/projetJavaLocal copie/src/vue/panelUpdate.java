@@ -5,7 +5,13 @@
  */
 package vue;
 
+/**
+ *
+ * @author Pierre-Louis
+ */
+
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -14,47 +20,53 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Fenetre extends JFrame{
-
-  CardLayout cl = new CardLayout();
-  JPanel content = new JPanel();
+public class panelUpdate extends JPanel {
+    
+    CardLayout cl = new CardLayout();
+    JPanel content = new JPanel();
   
-  //Liste des noms de nos conteneurs pour la pile de cartes
-  String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4"};
-  int indice = 0;
-
-  public Fenetre(){
-      
-    this.setTitle("Gestion Hopital");
-    this.setSize(600, 600);
-    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setLocationRelativeTo(null);
-		
+    //Liste des noms de nos conteneurs pour la pile de cartes
+    String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4"};
+    int indice = 0;
+    
+    
+    
+    
+    public panelUpdate() {
+      //On définit le layout à utiliser sur le content pane
+    this.setLayout(new GridLayout(3,2));
+    
+    
     //On crée trois conteneurs de couleur différente
     //Find
-    panelFind card1 = new panelFind();
+    panelUpdateChambre card1 = new panelUpdateChambre();
     card1.setBackground(Color.blue);	
     //Update
-    panelUpdate card2 = new panelUpdate();
+    panelUpdateMalade card2 = new panelUpdateMalade();
     card2.setBackground(Color.red);	
     //Create
-    panelCreate card3 = new panelCreate();
+    panelUpdateInfirmier card3 = new panelUpdateInfirmier();
     card3.setBackground(Color.green);
     //Delete
-    panelDelete card4 = new panelDelete();
+    panelUpdateDocteur card4 = new panelUpdateDocteur();
     card4.setBackground(Color.yellow);
-
+    
     JPanel boutonPane = new JPanel();
     
     // REMPLISSAGE DU BOUTONPANE
-    JButton bouton_find = new JButton("Find");
-    JButton bouton_update = new JButton("Update");
-    JButton bouton_create = new JButton("Create");
-    JButton bouton_delete = new JButton("Delete");
-            
+    JButton bouton_chambre = new JButton("Chambre");
+    JButton bouton_malade = new JButton("Malade");
+    JButton bouton_infirmier = new JButton("Infirmier");
+    JButton bouton_docteur = new JButton("Docteur");
+    
+    //On ajoute le bouton au content pane de la JFrame 
+    boutonPane.add(bouton_chambre); 
+    boutonPane.add(bouton_malade); 
+    boutonPane.add(bouton_infirmier); 
+    boutonPane.add(bouton_docteur); 
     
     //Définition de l'action du bouton find
-    bouton_find.addActionListener(new ActionListener(){
+    bouton_chambre.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
         //changePanel(card1);
@@ -63,36 +75,32 @@ public class Fenetre extends JFrame{
     });
     
     //Définition de l'action du bouton Update
-    bouton_update.addActionListener(new ActionListener(){
+    bouton_malade.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
          cl.show(content, listContent[1]);
       }
     });
     
-    //Définition de l'action du bouton Create
-    bouton_create.addActionListener(new ActionListener(){
+      
+    //Définition de l'action du bouton Update
+    bouton_infirmier.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
          cl.show(content, listContent[2]);
       }
     });
     
-    //Définition de l'action du bouton Delete
-    bouton_delete.addActionListener(new ActionListener(){
+    
+     //Définition de l'action du bouton malade
+    bouton_docteur.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
          cl.show(content, listContent[3]);
+      
       }
     });
-	
-		
-    //Retour	
-    boutonPane.add(bouton_find);
-    boutonPane.add(bouton_update);
-    boutonPane.add(bouton_create);
-    boutonPane.add(bouton_delete);
-
+    
     //On définit le layout
     content.setLayout(cl);
     //boutonPane.setLayout(new BorderLayout());
@@ -103,9 +111,11 @@ public class Fenetre extends JFrame{
     content.add(card3, listContent[2]);
     content.add(card4, listContent[3]);
 
-    this.getContentPane().add(boutonPane, BorderLayout.NORTH);
-    this.getContentPane().add(content, BorderLayout.CENTER);
+    add(boutonPane, BorderLayout.CENTER);
+    add(content, BorderLayout.SOUTH);
     this.setVisible(true);
-  }	
-
+   
 }
+    
+}
+

@@ -49,18 +49,11 @@ public class ChambreDAO extends DAO<Chambre> {
   @Override
    public boolean update(Chambre obj) {
                         try{
-            String a1="";
-             int b1=0;
-             int c1=0;
-             Scanner sc = new Scanner(System.in);
-             System.out.println("Vous avez choisis de modifier un element ");
-             a1=sc.next();
-             b1=sc.nextInt();
-             c1=sc.nextInt();                
+           
+             System.out.println("Vous avez choisis de modifier une chambre ");               
             int result = this.connect.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE,
-            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE chambre SET code_service ='" +a1+"', surveillant ='"+b1+"', nb_lits ='"+c1+"' WHERE no_chambre = '" + obj.getNum_ch()+ "'");
-                        
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE `chambre` SET `nb_lits` = '"+obj.getNb_lits()+"', surveillant ='"+obj.getIdSurveillant() + "' WHERE `chambre`.`code_service` = '"+obj.getCodeService()+"' AND CONCAT(`chambre`.`no_chambre`) = '"+obj.getNum_ch()+"'");            
         }
         catch (SQLException e) {
             e.printStackTrace();

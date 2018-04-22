@@ -28,11 +28,37 @@ public class DocteurDAO extends DAO<Docteur> {
     return false;
   }
 
+
+  
+  
+  //Supprimer un docteur
   public boolean delete(Docteur obj) {
+                try{
+            
+            int result = this.connect.createStatement(
+            ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE FROM `docteur` WHERE `numero` = '" + obj.getNumero()+ "'");
+                        
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            }
     return false;
-  }
-   
+    }
+  
+  
+  //Mettre à jour un Docteur
   public boolean update(Docteur obj) {
+    try{
+         
+            int result = this.connect.createStatement(
+            ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE docteur SET specialite='" +obj.getSpecialite()+"' WHERE CONCAT(`docteur`.`numero`) = '" + obj.getNumero()+ "'");
+                        
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            }
     return false;
   }
    

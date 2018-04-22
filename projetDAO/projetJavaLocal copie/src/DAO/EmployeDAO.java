@@ -57,7 +57,7 @@ public class EmployeDAO extends DAO<Employe> {
          
             int result = this.connect.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE,
-            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE employe SET nom='" +obj.getNom()+"', prenom ='"+obj.getPrenom()+"', adresse ='"+obj.getAdresse()+"', tel ='"+obj.getTel()+"' WHERE numero = '" + obj.getNumero()+ "'");
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE employe SET nom='" +obj.getNom()+"', prenom ='"+obj.getPrenom()+"', adresse ='"+obj.getAdresse()+"', tel ='"+obj.getTel()+"' WHERE CONCAT(`employe`.`numero`) = '" + obj.getNumero()+ "'");
                         
         }
         catch (SQLException e) {

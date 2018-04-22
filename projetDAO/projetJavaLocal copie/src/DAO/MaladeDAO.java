@@ -57,7 +57,7 @@ public class MaladeDAO extends DAO<Malade> {
          
             int result = this.connect.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE,
-            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE malade SET nom='" +obj.getNom()+"', prenom ='"+obj.getPrenom()+"', adresse ='"+obj.getAdresse()+ "', tel ='"+obj.getTel()+ "', mutuelle ='"+obj.getMutuelle()+ "' WHERE numero = '" + obj.getNumero()+ "'");
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("UPDATE malade SET nom='" +obj.getNom()+"', prenom ='"+obj.getPrenom()+"', adresse ='"+obj.getAdresse()+ "', tel ='"+obj.getTel()+ "', mutuelle ='"+obj.getMutuelle()+ "' WHERE CONCAT (`malade`.`numero`)  = '" + obj.getNumero()+ "'");
                         
         }
         catch (SQLException e) {
