@@ -22,7 +22,7 @@ public class panelFind extends JPanel {
     
     
     public panelFind() {
-      //On définit le layout à utiliser sur le content pane
+    //On définit le layout à utiliser sur le content pane
     this.setLayout(new GridLayout(3,2));
     
     

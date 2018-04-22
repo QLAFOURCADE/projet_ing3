@@ -26,7 +26,7 @@ public class panelCreate extends JPanel {
     JPanel content = new JPanel();
   
     //Liste des noms de nos conteneurs pour la pile de cartes
-    String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4", "CARD_5"};
+    String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4", "CARD_5", "CARD_6", "CARD_7"};
     int indice = 0;
     
     
@@ -53,6 +53,13 @@ public class panelCreate extends JPanel {
     //Service
     panelCreateService card5 = new panelCreateService();
     card5.setBackground(Color.pink);
+    //Soigne
+    panelCreateSoigne card6 = new panelCreateSoigne();
+    card6.setBackground(Color.orange);
+     //Hospitalisation
+    panelCreateHospitalisation card7 = new panelCreateHospitalisation();
+    card7.setBackground(Color.cyan);
+    
     
     JPanel boutonPane = new JPanel();
     
@@ -62,6 +69,8 @@ public class panelCreate extends JPanel {
     JButton bouton_infirmier = new JButton("Infirmier");
     JButton bouton_docteur = new JButton("Docteur");
     JButton bouton_service = new JButton("Service");
+    JButton bouton_soigne = new JButton("Soigne");
+    JButton bouton_hospitalisation = new JButton("Hospitalisation");
     
     //On ajoute le bouton au content pane de la JFrame 
     boutonPane.add(bouton_chambre); 
@@ -69,6 +78,8 @@ public class panelCreate extends JPanel {
     boutonPane.add(bouton_infirmier); 
     boutonPane.add(bouton_docteur); 
     boutonPane.add(bouton_service); 
+    boutonPane.add(bouton_soigne); 
+    boutonPane.add(bouton_hospitalisation);
     
     //Définition de l'action du bouton find
     bouton_chambre.addActionListener(new ActionListener(){
@@ -115,6 +126,24 @@ public class panelCreate extends JPanel {
       }
     });
     
+      //Définition de l'action du bouton soigne
+    bouton_soigne.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent event){
+        //Via cette instruction, on passe au prochain conteneur de la pile
+         cl.show(content, listContent[5]);
+      
+      }
+    });
+    
+      //Définition de l'action du bouton hospitalisation
+    bouton_hospitalisation.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent event){
+        //Via cette instruction, on passe au prochain conteneur de la pile
+         cl.show(content, listContent[6]);
+      
+      }
+    });
+    
     //On définit le layout
     content.setLayout(cl);
     //boutonPane.setLayout(new BorderLayout());
@@ -125,6 +154,8 @@ public class panelCreate extends JPanel {
     content.add(card3, listContent[2]);
     content.add(card4, listContent[3]);
     content.add(card5, listContent[4]);
+    content.add(card6, listContent[5]);
+    content.add(card7, listContent[6]);
 
     add(boutonPane, BorderLayout.CENTER);
     add(content, BorderLayout.SOUTH);

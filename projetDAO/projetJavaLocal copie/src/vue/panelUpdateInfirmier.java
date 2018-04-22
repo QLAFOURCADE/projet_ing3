@@ -26,6 +26,7 @@ import modele.Employe;
 import DAO.InfirmierDAO;
 import modele.Infirmier;
 import controleur.Connexion;
+import java.awt.Color;
 /**
  *
  * @author Pierre-Louis
@@ -44,6 +45,7 @@ public class panelUpdateInfirmier extends JPanel {
       // ajouter des boites de texte pour que l'utilisateur ajoute une chambre
         tNumero = new JTextField(10);
         tNumero.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        tNumero.setBackground(Color.RED);
         tNom = new JTextField(10);
         tNom.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         tPrenom = new JTextField(10);

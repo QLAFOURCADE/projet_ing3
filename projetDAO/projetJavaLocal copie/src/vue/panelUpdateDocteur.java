@@ -22,6 +22,7 @@ import modele.Employe;
 import DAO.DocteurDAO;
 import modele.Docteur;
 import controleur.Connexion;
+import java.awt.Color;
 /**
  *
  * @author Pierre-Louis
@@ -40,6 +41,7 @@ public class panelUpdateDocteur extends JPanel {
       // ajouter des boites de texte pour que l'utilisateur ajoute une chambre
         tNumero = new JTextField(10);
         tNumero.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        tNumero.setBackground(Color.RED);
         tNom = new JTextField(10);
         tNom.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         tPrenom = new JTextField(10);

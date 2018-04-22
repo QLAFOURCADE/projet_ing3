@@ -20,6 +20,7 @@ import DAO.DAO;
 import DAO.ChambreDAO;
 import modele.Chambre;
 import controleur.Connexion;
+import java.awt.Color;
 /**
  *
  * @author Pierre-Louis
@@ -38,8 +39,10 @@ public class panelUpdateChambre extends JPanel {
       // ajouter des boites de texte pour que l'utilisateur ajoute une chambre
         c_s = new JTextField(10);
         c_s.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        c_s.setBackground(Color.RED);
         no_c = new JTextField(10);
         no_c.setHorizontalAlignment((int) CENTER_ALIGNMENT);
+        no_c.setBackground(Color.RED);
         surv = new JTextField(10);
         surv.setHorizontalAlignment((int) CENTER_ALIGNMENT);
         nb_l = new JTextField(10);
