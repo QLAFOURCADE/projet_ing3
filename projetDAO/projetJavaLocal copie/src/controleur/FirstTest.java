@@ -25,7 +25,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Tiphaine, Quiterie
  */
 
 
@@ -116,7 +116,8 @@ public class FirstTest {
     System.out.println("\n********************************\n");
     */
     
-    Fenetre fen = new Fenetre(); 
+    FenetreConnexion f = new FenetreConnexion();
+    
     
     
     

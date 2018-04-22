@@ -3,42 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreateInfirmier.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/ServiceDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/DocteurDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Hospitalisation.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Soigne.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/controleur/FirstTest.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelDelete.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Infirmier.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/EmployeDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelDeleteInfirmier.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/MaladeDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelDeleteMalade.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelUpdateDocteur.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Service.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreateService.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Docteur.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Malade.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelUpdateChambre.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/Fenetre.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/HospitalisationDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/InfirmierDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreate.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Chambre.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreateMalade.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelUpdateInfirmier.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelUpdateMalade.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreateChambre.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/ChambreDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelDeleteDocteur.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/modele/Employe.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelCreateDocteur.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/DAO/SoigneDAO.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelFind.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelDeleteChambre.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/controleur/Connexion.java</file>
-            <file>file:/Users/Pierre-Louis/Desktop/projetjavalocal/projetJavaLocal/src/vue/panelUpdate.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/vue/FenetreConnexion.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/vue/panelCreateChambre.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/DAO/ChambreDAO.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/controleur/FirstTest.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/controleur/Connexion.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/vue/panelCreate.java</file>
+            <file>file:/C:/Users/Quiterie/Documents/ECE-ING3/Info%20-%20JAVA/PROJET/projet_S6_ing3/projet_ing3/projetDAO/projetJavaLocal%20copie/src/vue/Fenetre.java</file>
         </group>
     </open-files>
 </project-private>
