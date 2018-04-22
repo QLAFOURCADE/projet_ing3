@@ -6,11 +6,30 @@
 package controleur;
 import modele.*;
 import DAO.*;
+import com.sun.org.apache.xerces.internal.xs.StringList;
+import java.awt.BorderLayout;
+import java.awt.List;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import vue.*;
+import java.util.Scanner;
+import modele.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
  * @author Pierre-Louis
  */
+
+
+    
 public class FirstTest { 
   public static void main(String[] args) {
      
@@ -57,10 +76,10 @@ public class FirstTest {
     /*
     //Inserer un nouveau docteur
    DAO<Docteur> docteurDao2 = new DocteurDAO(Connexion.getInstance());
-        String b="Ornitologue";
-        Docteur d = new Docteur(18, b);
+        String b="Generaliste";
+        Docteur d = new Docteur(6, b);
         docteurDao2.create(d);    
-    */
+    /*
     
      
     /*
@@ -86,7 +105,7 @@ public class FirstTest {
     System.out.println("\n********************************\n");
     */
     
-    
+    /*
      //Testons des Malades 13 et 14
       DAO<Malade> maladeDao = new MaladeDAO(Connexion.getInstance());
     for(int i = 13; i < 15; i++){
@@ -95,7 +114,9 @@ public class FirstTest {
     }
       
     System.out.println("\n********************************\n");
+    */
     
+    Fenetre fen = new Fenetre(); 
     
     
     

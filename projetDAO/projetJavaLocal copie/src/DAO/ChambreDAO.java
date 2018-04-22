@@ -37,7 +37,7 @@ public class ChambreDAO extends DAO<Chambre> {
             
             int result = this.connect.createStatement(
             ResultSet.TYPE_SCROLL_INSENSITIVE,
-                ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE FROM `chambre` WHERE `no_chambre` = '" + obj.getNum_ch()+ "'");
+            ResultSet.CONCUR_READ_ONLY).executeUpdate("DELETE FROM `chambre` WHERE `chambre`.`code_service` = \'"+obj.getCodeService()+"\' AND CONCAT(`chambre`.`no_chambre`) = \'"+obj.getNum_ch()+"\'");
                         
         }
         catch (SQLException e) {
