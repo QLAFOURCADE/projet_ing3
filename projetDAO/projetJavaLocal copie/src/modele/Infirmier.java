@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Infirmier extends Employe {
     
@@ -19,10 +19,10 @@ public class Infirmier extends Employe {
     private String rotation; // 0 - JOUR & 1 - NUIT
     private int salaire;
     
-    
-    
-    
-    //Constructeur
+
+    /**
+     * CONSTRUCTEUR
+     */
     public Infirmier(){};
     
     /**
@@ -66,7 +66,6 @@ public class Infirmier extends Employe {
     
     /**
      * METHODE : getter - lire l'attribut rotation
-     * 0 = JOUR & 1 = NUIT
      * @return rotation
      */
     public String getRotation() {

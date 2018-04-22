@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Malade {
     
@@ -22,9 +22,9 @@ public class Malade {
     private String mutuelle; 
 
     
-    
-     
-    //Constructeur
+    /**
+     * CONSTRUCTEUR
+     */
     public Malade(){};
     
     /**

@@ -8,16 +8,24 @@ import java.sql.*;
 import modele.Soigne;
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class SoigneDAO extends DAO<Soigne> {
+    
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
   public SoigneDAO(Connection conn) {
     super(conn);
   }
 
 
-  
-  //Créer soigne
+  /**
+   * METHODE : Créer dans soigne
+   * @param obj
+   * @return 
+   */
  @Override
  public boolean create(Soigne obj) {
         try{
@@ -32,7 +40,12 @@ public class SoigneDAO extends DAO<Soigne> {
     return false;
     }
 
-  //Supprimer soigne
+  
+ /**
+  * METHODE : Supprimer dans soigne
+  * @param obj
+  * @return 
+  */
   @Override
   public boolean delete(Soigne obj) {
                 try{
@@ -48,10 +61,11 @@ public class SoigneDAO extends DAO<Soigne> {
     return false;
     }
    
-  
- 
-   
-  //Trouver une hospitalisation à partir du numero du docteur
+  /**
+   * METHODE : Trouver une hospitalisation à partir du numero du docteur
+   * @param no_docteur
+   * @return 
+   */
   @Override
   public Soigne find(int no_docteur) {
     Soigne soigne = new Soigne();      
@@ -71,6 +85,11 @@ public class SoigneDAO extends DAO<Soigne> {
     return soigne;
   }
 
+  /**
+   * 
+   * @param obj
+   * @return 
+   */
     @Override
     public boolean update(Soigne obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

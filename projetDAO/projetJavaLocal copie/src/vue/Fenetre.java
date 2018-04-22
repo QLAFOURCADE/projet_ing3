@@ -14,23 +14,38 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author Quiterie, Pierre-Louis, Tiphaine
+ */
 public class Fenetre extends JFrame{
 
   CardLayout cl = new CardLayout();
   JPanel content = new JPanel();
   
-  //Liste des noms de nos conteneurs pour la pile de cartes
+  /**
+   * Liste des noms de nos conteneurs pour la pile de cartes
+   */
   String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4"};
   int indice = 0;
 
+  /**
+   * CONSTRUCTEUR
+   */
   public Fenetre(){
       
+    /**
+     * initialisation de la fenetre 
+     */
     this.setTitle("Gestion Hopital");
     this.setSize(600, 600);
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     this.setLocationRelativeTo(null);
 		
-    //On crée trois conteneurs de couleur différente
+
+    /**
+     * On crée trois conteneurs de couleur différente
+     */
     //Find
     panelFind card1 = new panelFind();
     card1.setBackground(Color.blue);	

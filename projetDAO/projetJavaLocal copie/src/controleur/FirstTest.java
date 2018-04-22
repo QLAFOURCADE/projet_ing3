@@ -25,11 +25,9 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Pierre-Louis, Tiphaine, Quiterie
+ * @author Tiphaine, Quiterie, Pierre-Louis
  */
 
-
-    
 public class FirstTest { 
   public static void main(String[] args) {
      
@@ -116,6 +114,9 @@ public class FirstTest {
     System.out.println("\n********************************\n");
     */
     
+    /**
+     * appelle de la fenetre graphique 
+     */
     FenetreConnexion f = new FenetreConnexion();
     
     

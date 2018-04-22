@@ -9,14 +9,26 @@ import modele.Chambre;
 import java.util.Scanner;
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
+
+
 public class ChambreDAO extends DAO<Chambre> {
+    
+  /**
+   * CONSTRUCTEUR : de la classe 
+   *    appelle la fonction mère avec super()
+   * @param conn 
+   */
   public ChambreDAO(Connection conn) {
     super(conn);
   }
 
-
+/**
+ * 
+ * @param obj
+ * @return 
+ */
  @Override
  public boolean create(Chambre obj) {
         try{
@@ -31,6 +43,11 @@ public class ChambreDAO extends DAO<Chambre> {
     return false;
     }
 
+ /**
+  * 
+  * @param obj
+  * @return 
+  */
   @Override
   public boolean delete(Chambre obj) {
                 try{
@@ -46,6 +63,11 @@ public class ChambreDAO extends DAO<Chambre> {
     return false;
     }
    
+  /**
+   * 
+   * @param obj
+   * @return 
+   */
   @Override
    public boolean update(Chambre obj) {
                         try{
@@ -61,7 +83,12 @@ public class ChambreDAO extends DAO<Chambre> {
     return false;
     }
    
-  //Trouver une chambre à partir de son ID
+  
+   /**
+    * Trouver une chambre à partir de son ID
+    * @param num_ch
+    * @return 
+    */
   @Override
   public Chambre find(int num_ch) {
     Chambre chambre = new Chambre();      

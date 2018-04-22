@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Employe {
     
@@ -20,7 +20,10 @@ public class Employe {
     private String adresse;
     private String tel;
     
-    //Constructeur de base
+
+    /**
+     * CONSTRUCTEUR PAR DEFAUT
+     */
     public Employe(){};
     
     /**

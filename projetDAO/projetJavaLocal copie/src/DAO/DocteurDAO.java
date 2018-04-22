@@ -8,13 +8,23 @@ import java.sql.*;
 import modele.Docteur;
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class DocteurDAO extends DAO<Docteur> {
+    
+  /**
+    * CONSTRUCTEUR
+    * @param conn 
+    */
   public DocteurDAO(Connection conn) {
     super(conn);
   }
 
+  /**
+   * METHODE : crée un docteur 
+   * @param obj
+   * @return 
+   */
   public boolean create(Docteur obj) {
     try{
             //ATTENTION IL FAUT QUE GETNUMERO CORRESPONDE AU NUMERO D'UN EMPLOYE
@@ -29,9 +39,12 @@ public class DocteurDAO extends DAO<Docteur> {
   }
 
 
-  
-  
-  //Supprimer un docteur
+ 
+  /**
+   * METHODE : Supprimer un docteur
+   * @param obj
+   * @return 
+   */
   public boolean delete(Docteur obj) {
                 try{
             
@@ -46,8 +59,11 @@ public class DocteurDAO extends DAO<Docteur> {
     return false;
     }
   
-  
-  //Mettre à jour un Docteur
+  /**
+   * METHODE : Mettre à jour un Docteur 
+   * @param obj
+   * @return 
+   */
   public boolean update(Docteur obj) {
     try{
          
@@ -62,7 +78,12 @@ public class DocteurDAO extends DAO<Docteur> {
     return false;
   }
    
-  //Trouver un docteur à partir de son numero
+ 
+  /**
+   * METHODE : Trouver un docteur à partir de son numero
+   * @param numero
+   * @return 
+   */
   public Docteur find(int numero) {
      Docteur docteur = new Docteur();      
       

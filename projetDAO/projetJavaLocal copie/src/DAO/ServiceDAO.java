@@ -9,16 +9,25 @@ import modele.Service;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class ServiceDAO extends DAO<Service> {
   
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
     public ServiceDAO(Connection conn) 
         {
             super(conn);
         }
 
- //Créer un service
+
+    /**
+     * METHODE : Créer un service
+     * @param obj
+     * @return 
+     */
  public boolean create(Service obj) {
         try{
             
@@ -32,7 +41,12 @@ public class ServiceDAO extends DAO<Service> {
     return false;
     }
 
-  //Supprimer un service
+
+ /**
+  * METHODE : Supprimer un service
+  * @param obj
+  * @return 
+  */
   public boolean delete(Service obj) {
                 try{
             
@@ -48,8 +62,12 @@ public class ServiceDAO extends DAO<Service> {
     }
    
   
-  //Modifier un service
-  
+ 
+  /**
+   * METHODE : Modifier un service
+   * @param obj
+   * @return 
+   */
    public boolean update(Service obj) {
         try{
          
@@ -64,8 +82,12 @@ public class ServiceDAO extends DAO<Service> {
     return false;
     }
    
-  //Trouver un infirmier a partir de son numero
-  
+
+  /**
+   * METHODE : Trouver un infirmier a partir de son numero
+   * @param code
+   * @return 
+   */
   public Service find(String code) {
     Service service = new Service();      
       
@@ -86,6 +108,11 @@ public class ServiceDAO extends DAO<Service> {
     return service;
   }
 
+  /**
+   * 
+   * @param id
+   * @return 
+   */
     @Override
     public Service find(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

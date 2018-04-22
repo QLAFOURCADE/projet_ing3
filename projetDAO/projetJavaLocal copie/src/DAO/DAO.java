@@ -8,12 +8,20 @@ import modele.*;
 import java.sql.*;
 
 /**
- *
- * @author Pierre-Louis
+ *  INTERFACE DAO : classe totalement abstraite
+ *              le but : automatiser les fontions insert/update/delete
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public abstract class DAO <T> {
+    /**
+     * attributs de l'interface 
+     */
   protected Connection connect = null;
-   
+  
+  /**
+   * CONSTRUCTEUR
+   * @param conn 
+   */
   public DAO(Connection conn){
     this.connect = conn;
   }
