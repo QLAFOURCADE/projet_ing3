@@ -26,7 +26,7 @@ public class panelCreate extends JPanel {
     JPanel content = new JPanel();
   
     //Liste des noms de nos conteneurs pour la pile de cartes
-    String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4"};
+    String[] listContent = {"CARD_1", "CARD_2", "CARD_3","CARD_4", "CARD_5"};
     int indice = 0;
     
     
@@ -38,32 +38,37 @@ public class panelCreate extends JPanel {
     
     
     //On crée trois conteneurs de couleur différente
-    //Find
+    //Chambre
     panelCreateChambre card1 = new panelCreateChambre();
     card1.setBackground(Color.blue);	
-    //Update
+    //Malade
     panelCreateMalade card2 = new panelCreateMalade();
     card2.setBackground(Color.red);	
-    //Create
+    //Infirmier
     panelCreateInfirmier card3 = new panelCreateInfirmier();
     card3.setBackground(Color.green);
-    //Delete
+    //Docteur
     panelCreateDocteur card4 = new panelCreateDocteur();
     card4.setBackground(Color.yellow);
+    //Service
+    panelCreateService card5 = new panelCreateService();
+    card5.setBackground(Color.pink);
     
     JPanel boutonPane = new JPanel();
     
     // REMPLISSAGE DU BOUTONPANE
-    JButton bouton_chambre = new JButton("chambre");
-    JButton bouton_malade = new JButton("malade");
-    JButton bouton_infirmier = new JButton("infirmier");
-    JButton bouton_docteur = new JButton("docteur");
+    JButton bouton_chambre = new JButton("Chambre");
+    JButton bouton_malade = new JButton("Malade");
+    JButton bouton_infirmier = new JButton("Infirmier");
+    JButton bouton_docteur = new JButton("Docteur");
+    JButton bouton_service = new JButton("Service");
     
     //On ajoute le bouton au content pane de la JFrame 
     boutonPane.add(bouton_chambre); 
     boutonPane.add(bouton_malade); 
     boutonPane.add(bouton_infirmier); 
     boutonPane.add(bouton_docteur); 
+    boutonPane.add(bouton_service); 
     
     //Définition de l'action du bouton find
     bouton_chambre.addActionListener(new ActionListener(){
@@ -92,11 +97,20 @@ public class panelCreate extends JPanel {
     });
     
     
-     //Définition de l'action du bouton malade
+     //Définition de l'action du bouton docteur
     bouton_docteur.addActionListener(new ActionListener(){
       public void actionPerformed(ActionEvent event){
         //Via cette instruction, on passe au prochain conteneur de la pile
          cl.show(content, listContent[3]);
+      
+      }
+    });
+    
+     //Définition de l'action du bouton service
+    bouton_service.addActionListener(new ActionListener(){
+      public void actionPerformed(ActionEvent event){
+        //Via cette instruction, on passe au prochain conteneur de la pile
+         cl.show(content, listContent[4]);
       
       }
     });
@@ -110,6 +124,7 @@ public class panelCreate extends JPanel {
     content.add(card2, listContent[1]);
     content.add(card3, listContent[2]);
     content.add(card4, listContent[3]);
+    content.add(card5, listContent[4]);
 
     add(boutonPane, BorderLayout.CENTER);
     add(content, BorderLayout.SOUTH);
