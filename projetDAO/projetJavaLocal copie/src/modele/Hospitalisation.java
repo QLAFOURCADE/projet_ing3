@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Hospitalisation {
     
@@ -20,11 +20,19 @@ public class Hospitalisation {
     private int lit;
   
     
-    //Constructeur 
+    /**
+     * CONSTRUCTEUR PAR DEFAUT 
+     */
     public Hospitalisation(){};
     
-    
-    //Constructeur surchargé 4 param
+
+    /**
+     * CONSTRUCTEUR SURCHARGE
+     * @param no_malade
+     * @param code_service
+     * @param no_chambre
+     * @param lit 
+     */
      public Hospitalisation(int no_malade, String code_service, int no_chambre, int lit){
         this.no_malade = no_malade;
         this.no_chambre = no_chambre;
@@ -34,54 +42,85 @@ public class Hospitalisation {
     }
 
 
-    //Get Numero Malade
+     /**
+      * METHODE : lire l'attribut numero du malade
+      * @return 
+      */
     public int getNo_Malade() {
         return no_malade;
     }
 
-    //Get Numero Chambre
+    
+    /**
+     * METHODE : lire l'attribut numero de la chambre
+     * @return 
+     */
     public int getNo_Chambre() {
         return no_chambre;
     }
     
-    //Get Service
+    
+    /**
+     * METHODE : lire l'attribut code du service 
+     * @return 
+     */
     public String getCodeService()
     {
         return code_service;
     }
     
-    //Get Lit
+    
+    /**
+     * METHODE : lire l'attribut du nombre de lit
+     * @return 
+     */
     public int getLit()
     {
         return lit;
     }
     
 
-    //Set Numero de Chambre
+    /**
+     * METHODE : modifier l'attribut numero de la chambre
+     * @param no_chambre 
+     */
     public void setNo_Chambre(int no_chambre) {
         this.no_chambre = no_chambre;
     }
 
-    //Set Lit
+    
+    /**
+     * METHODE : modifier l'attribut nombre du lit 
+     * @param lit 
+     */
     public void setLit(int lit) {
         this.lit = lit;
     }
     
 
-    
-    //Set Service
+    /**
+     * METHODE : modifier l'attribut code du service 
+     * @param codeService 
+     */
     public void setCodeService(String codeService)
     {
         this.code_service=codeService;
     }
     
-   
-    //Set Numero malade
+    
+    /**
+     * METHODE : modifier l'attribut numero du malade
+     * @param no_malade 
+     */
     public void setNo_Malade(int no_malade)
     {
         this.no_malade=no_malade;
     }
     
+    /**
+     * METHODE pour la console
+     * @return 
+     */
     //Tostring
      @Override
     public String toString() {

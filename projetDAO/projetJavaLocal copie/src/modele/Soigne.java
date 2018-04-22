@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Soigne {
     
@@ -17,39 +17,64 @@ public class Soigne {
     private int no_docteur, no_malade;
     
   
-    //Constructeur 
+    /**
+     * CONSTRUCTEUR
+     */
     public Soigne(){};
     
     
-    //Constructeur surchargé 4 param
+    /**
+     * CONSTRUCTEUR PAR DEFAUT 
+     * @param no_docteur
+     * @param no_malade 
+     */
      public Soigne(int no_docteur, int no_malade){
         this.no_malade = no_malade;
         this.no_docteur = no_docteur;
            
     }
 
-
-    //Get Numero Malade
+     
+     /**
+      * METHODES : getter - lire l'attribut numero du malade
+      * @return 
+      */
     public int getNo_Malade() {
         return no_malade;
     }
 
-    //Get Numero Docteur
+    
+    /**
+     * METHODES : getter - lire l'attribut numero du docteur 
+     * @return 
+     */
     public int getNo_Docteur() {
         return no_docteur;
     }
     
-    //Set Numero Malade
+    
+    /**
+     * METHODES : setter - modifier l'attribut numero malade
+     * @param no_malade 
+     */
     public void setNo_Malade(int no_malade) {
         this.no_malade = no_malade;
     }
 
-    //Set Lit
+    
+    /**
+     * METHODES : setter - modifier l'attribut docteur 
+     * @param no_docteur 
+     */
     public void setDocteur(int no_docteur) {
         this.no_docteur = no_docteur;
     }
     
-    //Tostring
+    
+    /**
+     * METHODE pour console ( pas grand utile ici )
+     * @return 
+     */
      @Override
     public String toString() {
         return "";

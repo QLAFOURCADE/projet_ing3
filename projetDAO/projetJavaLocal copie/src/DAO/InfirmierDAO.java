@@ -11,17 +11,25 @@ import modele.Employe;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class InfirmierDAO extends DAO<Infirmier> {
   
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
     public InfirmierDAO(Connection conn) 
         {
             super(conn);
         }
 
 
- //Créer un infirmier
+ /**
+  * METHODE : Créer un infirmier
+  * @param obj
+  * @return 
+  */
  public boolean create(Infirmier obj) {
         try{
             
@@ -35,7 +43,11 @@ public class InfirmierDAO extends DAO<Infirmier> {
     return false;
     }
 
-  //Supprimer
+  /**
+   * METHODE : Supprimer un infirmier
+   * @param obj
+   * @return 
+   */
   public boolean delete(Infirmier obj) {
                 try{
             
@@ -51,8 +63,12 @@ public class InfirmierDAO extends DAO<Infirmier> {
     }
    
   
-  //Modifier un infirmier
   
+  /**
+   * METHODE : Modifier un infirmier
+   * @param obj
+   * @return 
+   */
    public boolean update(Infirmier obj) {
         try{
          
@@ -67,7 +83,12 @@ public class InfirmierDAO extends DAO<Infirmier> {
     return false;
     }
    
-  //Trouver un infirmier a partir de son numero
+
+   /**
+    * METHODE : Trouver un infirmier a partir de son numero
+    * @param numero
+    * @return 
+    */
   @Override
   public Infirmier find(int numero) {
     Infirmier infirmier = new Infirmier();      

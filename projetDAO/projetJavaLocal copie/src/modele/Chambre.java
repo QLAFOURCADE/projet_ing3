@@ -7,7 +7,7 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine 
  */
 public class Chambre {
     
@@ -20,7 +20,9 @@ public class Chambre {
     private String code_service;
     
     
-    //Constructeur 
+    /**
+     * CONSTRUCTEUR PAR DEFAUT
+     */
     public Chambre(){};
     
     
@@ -35,7 +37,14 @@ public class Chambre {
         this.nb_lits = nb_lits;
     }
     
-    //Constructeur surchargé 4 param
+    
+    /**
+     * METHODE : Constructeur surchargé 4 param
+     * @param code_service
+     * @param num_ch
+     * @param surveillant
+     * @param nb_lits 
+     */
      public Chambre(String code_service, int num_ch, int surveillant, int nb_lits){
         this.num_ch = num_ch;
         this.nb_lits = nb_lits;
@@ -77,31 +86,51 @@ public class Chambre {
         this.nb_lits = nb_lits;
     }
     
-    //Get service
+     
+    
+    /**
+     * METHODE : lire l'attribut code du service
+     * @return 
+     */
     public String getCodeService()
     {
         return code_service;
     }
     
-    //Set service
+    /**
+     * METHODE : modifier l'attribut code du service
+     * @param codeService 
+     */
     public void setCodeService(String codeService)
     {
         this.code_service=codeService;
     }
     
-    //Get surveillnt
+    
+    /**
+     * METHODE : lire l'attribut ID du surveillant
+     * @return 
+     */
     public int getIdSurveillant()
     {
         return surveillant;
     }
     
-    //Set surveillant
+    
+    /**
+     * METHODE : modifier l'attribut ID du surveillant 
+     * @param idSurveillant 
+     */
     public void setIdSurveillant(int idSurveillant)
     {
         this.surveillant=idSurveillant;
     }
     
-    //Tostring
+    
+    /**
+     * METHODE : pour ecrire les éléments de cette classe - toString
+     * @return 
+     */
      @Override
     public String toString() {
         return "\n"+ "Numero de chambre : " + num_ch + "\n" + "Nombre de lits : " + nb_lits + "\n" + "Surveillant : " + surveillant + "\n" + 

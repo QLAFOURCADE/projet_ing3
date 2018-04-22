@@ -8,16 +8,24 @@ import java.sql.*;
 import modele.Hospitalisation;
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class HospitalisationDAO extends DAO<Hospitalisation> {
+    
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
   public HospitalisationDAO(Connection conn) {
     super(conn);
   }
 
 
-  
-  //Créer une hospitalisation
+  /**
+   * METHODE : Créer une hospitalisation
+   * @param obj
+   * @return 
+   */
  @Override
  public boolean create(Hospitalisation obj) {
         try{
@@ -32,7 +40,11 @@ public class HospitalisationDAO extends DAO<Hospitalisation> {
     return false;
     }
 
-  //Supprimer une hospitalisation
+  /**
+   * METHODE : Supprimer une hospitalisation
+   * @param obj
+   * @return 
+   */
   @Override
   public boolean delete(Hospitalisation obj) {
                 try{
@@ -49,7 +61,11 @@ public class HospitalisationDAO extends DAO<Hospitalisation> {
     }
    
   
-  //Update une hospitalisation
+  /**
+   * METHODE : Update une hospitalisation
+   * @param obj
+   * @return 
+   */
   @Override
    public boolean update(Hospitalisation obj) {
                         try{
@@ -65,7 +81,11 @@ public class HospitalisationDAO extends DAO<Hospitalisation> {
     return false;
     }
    
-  //Trouver une hospitalisation à partir du numero du malade
+  /**
+   * METHODE : Trouver une hospitalisation à partir du numero du malade
+   * @param num_malade
+   * @return 
+   */
   @Override
   public Hospitalisation find(int num_malade) {
     Hospitalisation hospitalisation = new Hospitalisation();      
@@ -86,7 +106,5 @@ public class HospitalisationDAO extends DAO<Hospitalisation> {
     }
     return hospitalisation;
   }
-
-
-   
+ 
 }

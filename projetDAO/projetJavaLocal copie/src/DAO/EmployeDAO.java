@@ -10,16 +10,24 @@ import java.util.Scanner;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class EmployeDAO extends DAO<Employe> {
   
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
     public EmployeDAO(Connection conn) 
         {
             super(conn);
         }
 
-
+ /**
+  * METHODE : créee un employe 
+  * @param obj
+  * @return 
+  */
  @Override
  public boolean create(Employe obj) {
         try{
@@ -34,6 +42,11 @@ public class EmployeDAO extends DAO<Employe> {
     return false;
     }
 
+ /**
+  * METHODE : supprimer un employe 
+  * @param obj
+  * @return 
+  */
   @Override
   public boolean delete(Employe obj) {
                 try{
@@ -50,7 +63,11 @@ public class EmployeDAO extends DAO<Employe> {
     }
    
   
-  //Modifier un employé
+  /**
+   * METHODE : Modifier un employé
+   * @param obj
+   * @return 
+   */
   @Override
    public boolean update(Employe obj) {
         try{
@@ -66,7 +83,12 @@ public class EmployeDAO extends DAO<Employe> {
     return false;
     }
    
-  //Trouver un employe a partir de son numero
+ 
+   /**
+    * METHODE : Trouver un employe a partir de son numero
+    * @param numero
+    * @return 
+    */
   @Override
   public Employe find(int numero) {
     Employe employe = new Employe();      

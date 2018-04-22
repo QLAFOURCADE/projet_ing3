@@ -11,16 +11,25 @@ import modele.Employe;
 
 /**
  *
- * @author Pierre-Louis
+ * @author Pierre-Louis, Quiterie et Tiphaine
  */
 public class MaladeDAO extends DAO<Malade> {
   
+    /**
+     * CONSTRUCTEUR
+     * @param conn 
+     */
     public MaladeDAO(Connection conn) 
         {
             super(conn);
         }
 
- //Créer un malade
+ 
+    /**
+     * METHODE : Créer un malade
+     * @param obj
+     * @return 
+     */
  public boolean create(Malade obj) {
         try{
             
@@ -34,7 +43,11 @@ public class MaladeDAO extends DAO<Malade> {
     return false;
     }
 
-  
+  /**
+   * METHODE : supprimer un malade 
+   * @param obj
+   * @return 
+   */
   public boolean delete(Malade obj) {
                 try{
             
@@ -50,8 +63,12 @@ public class MaladeDAO extends DAO<Malade> {
     }
    
   
-  //Modifier un infirmier
-  
+ 
+  /**
+   * METHODE : Modifier un infirmier
+   * @param obj
+   * @return 
+   */
    public boolean update(Malade obj) {
         try{
          
@@ -66,7 +83,12 @@ public class MaladeDAO extends DAO<Malade> {
     return false;
     }
    
-  //Trouver un infirmier a partir de son numero
+ 
+   /**
+    * METHODE : Trouver un infirmier a partir de son numero
+    * @param numero
+    * @return 
+    */
   @Override
   public Malade find(int numero) {
     Malade malade = new Malade();      

@@ -7,14 +7,20 @@ package modele;
 
 /**
  *
- * @author Pierre-Louis //fait
+ * @author Quiterie, Pierre-Louis, Tiphaine
  */
 public class Docteur extends Employe{
     
+    /**
+     * les attributs de la classe employe
+     */
     private String specialite;
     private int numero;
+
     
-    //Constructeur
+    /**
+     * CONSTRUCTEUR PAR DEFAUT 
+     */
     public Docteur(){};
     
     /**
